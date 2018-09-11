@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using CsvHelper;
 using Microsoft.AspNetCore.Mvc;
-using Mmai.Data;
 using Mmai.Models;
 
 namespace Mmai.Controllers.Api
@@ -11,31 +12,47 @@ namespace Mmai.Controllers.Api
     [Route("api/events")]
     public class GameEventController : Controller
     {
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IGameEventRepository repository;
+
+        public GameEventController(IGameEventRepository repository)
         {
-            return new string[] { "value1", "value2" };
+            this.repository = repository;
+        }
+
+        [HttpGet]
+        public async Task<JsonResult> Get()
+        {
+            var events = await repository.GetAll();
+
+            return Json(events);
+        }
+
+        [HttpGet("csv")]
+        public async Task<ActionResult> GetCsv()
+        {
+            var events = await repository.GetAll();
+            var stream = new MemoryStream();
+            var writer = new StreamWriter(stream);
+            var csvWriter = new CsvWriter(writer);
+
+            csvWriter.WriteRecords<GameEvent>(events);
+            await csvWriter.FlushAsync();
+
+            return File(stream.GetBuffer(), "application/CSV", "events.csv");
         }
 
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody]GameEventData value)
+        public async Task<IActionResult> Post([FromBody]GameEvent value)
         {
             var playerId = Request.Cookies["playerId"];
 
-            var gameId = value.GameId ?? Repository.NewGuid();
-            var result = await Repository.AddGameEvent(playerId, gameId, value.Label, value.Card, value.Time, value.MillisecondsSinceLastEvent);
+            if (string.IsNullOrEmpty(value.GameId))
+                value.GameId = repository.NewGuid();
+            value.PlayerId = playerId;
 
-            return Json(gameId);
+            var result = await repository.Insert(value);
+
+            return Json(value.GameId);
         }
-
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody]string value)
-        //{
-        //}
-
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
     }
 }

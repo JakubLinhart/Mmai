@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Microsoft.WindowsAzure.Storage.Table;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace Mmai.Models
 {
-    public class GameEventData
+    public class GameEvent : TableEntity
     {
         public string GameId { get; set; }
 
@@ -13,5 +14,6 @@ namespace Mmai.Models
         public string Card { get; set; }
         public DateTime Time { get; set; }
         public int? MillisecondsSinceLastEvent { get; set; }
+        public string PlayerId { get; set; }
     }
 }

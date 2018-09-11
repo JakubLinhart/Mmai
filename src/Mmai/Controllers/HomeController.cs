@@ -5,13 +5,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Mmai.Data;
 using Mmai.Models;
 
 namespace Mmai.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly IGameEventRepository repository;
+
+        public HomeController(IGameEventRepository repository)
+        {
+            this.repository = repository;
+        }
+
         public IActionResult Index()
         {
             var playerId = Request.Cookies["playerId"];
@@ -20,7 +26,7 @@ namespace Mmai.Controllers
             {
                 var options = new CookieOptions();
                 options.Expires = DateTime.Now.AddDays(14);
-                Response.Cookies.Append("playerId", Repository.NewGuid(), options);
+                Response.Cookies.Append("playerId", repository.NewGuid(), options);
             }
 
             return View();
