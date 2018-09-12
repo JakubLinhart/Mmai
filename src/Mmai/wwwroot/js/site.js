@@ -250,8 +250,30 @@ function getRandomInt(min, max) {
     var firstSelectedCard = null;
     var matchCount = 0;
     var lastEventTime = null;
+    var gameStartedTime = null;
     var gameId = null;
-    var won = false;
+    var movesCount = 0;
+
+    function postGameFinished() {
+        var now = new Date();
+        var gameDuration = now - gameStartedTime;
+
+        var data = JSON.stringify({
+            id: gameId,
+            duration: gameDuration,
+            finishedTime: now,
+            movesCount: movesCount
+        });
+
+        $.ajax({
+            url: "/api/games/finish/",
+            type: "post",
+            data: data,
+            dataType: "json",
+            accept: 'application/json',
+            contentType: "application/json"
+        });
+    }
 
     function postGameEvent(label, card) {
         var now = new Date();
@@ -334,6 +356,7 @@ function getRandomInt(min, max) {
         return x.weight - y.weight;
     });
 
+    gameStartedTime = new Date();
     postGameEvent("started", null);
     for (var i = 0; i < cardCount; i++) {
         cards[i].cardId = "#card" + i;
@@ -365,6 +388,8 @@ function getRandomInt(min, max) {
                 console.log(firstSelectedCard);
 
                 if (matchCount < cardCount) {
+                    movesCount++;
+                    console.log("matchCount " + matchCount + "; cardCount " + cardCount);
                     if (firstSelectedCard != null && firstSelectedCard.cardId != card.cardId) {
                         if (firstSelectedCard.setIndex != card.setIndex) {
                             $(card.cardId).removeClass("cardUncovered");
@@ -384,6 +409,7 @@ function getRandomInt(min, max) {
                                 won = true;
                             }
                             postGameEvent("match", card.url);
+                            postGameFinished();
                         }
                         firstSelectedCard = null;
                     }

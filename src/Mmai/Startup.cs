@@ -25,6 +25,7 @@ namespace Mmai
             services.AddMvc();
 
             services.AddSingleton<IGameEventRepository, GameEventRepository>();
+            services.AddSingleton<IGameRepository, GameRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

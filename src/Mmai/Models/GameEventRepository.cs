@@ -8,39 +8,26 @@ using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Mmai.Models
 {
-    public class GameEventRepository : IGameEventRepository
+    internal sealed class GameEventRepository : BaseRepository, IGameEventRepository
     {
-        private readonly string connectionString;
-        private CloudStorageAccount storageAccount;
-        private CloudTable gameEventsTable;
-
-        private CloudTable CreateTableClient(string tableName)
-        {
-            var tableClient = storageAccount.CreateCloudTableClient();
-            var table = tableClient.GetTableReference("gameEvents");
-            return table;
-        }
-
         public GameEventRepository(IConfiguration configuration)
+            : base("gameEvents", configuration)
         {
-            connectionString = configuration.GetConnectionString("tableStorage");
-            storageAccount = CloudStorageAccount.Parse(connectionString);
-            gameEventsTable = CreateTableClient("gameEvents");
         }
 
         public async Task<GameEvent> Insert(GameEvent gameEvent)
         {
-            await gameEventsTable.CreateIfNotExistsAsync();
+            await Table.CreateIfNotExistsAsync();
 
             gameEvent.PartitionKey = gameEvent.PlayerId;
             gameEvent.RowKey = NewGuid();
 
-            await gameEventsTable.ExecuteAsync(TableOperation.Insert(gameEvent));
+            await Table.ExecuteAsync(TableOperation.Insert(gameEvent));
             return gameEvent;
         }
 
         public Task<IEnumerable<GameEvent>> GetAll()
-            => ExecuteQueryAsync(gameEventsTable, new TableQuery<GameEvent>());
+            => ExecuteQueryAsync(Table, new TableQuery<GameEvent>());
 
         internal static async Task<IEnumerable<T>> ExecuteQueryAsync<T>(CloudTable table, TableQuery<T> query) where T : ITableEntity, new()
         {
