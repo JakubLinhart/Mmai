@@ -37,6 +37,7 @@ namespace Mmai.Models
         }
 
         private readonly Dictionary<string, SpeciesStub> speciesStubs;
+        private readonly string[] nextGameSpecies = { "10vars", "3vars" };
 
         private Species CreateSpecies(SpeciesStub stub)
         {
@@ -88,10 +89,17 @@ namespace Mmai.Models
             return species;
         }
 
+        private Random random = new Random();
+
         public Species Get(string name)
         {
-            var stub = speciesStubs[name];
+            if (name.Equals("nextrandom", StringComparison.OrdinalIgnoreCase))
+            {
+                var idx = random.Next(0, nextGameSpecies.Length);
+                name = nextGameSpecies[idx];
+            }
 
+            var stub = speciesStubs[name];
             return stub.Species.Value;
         }
     }

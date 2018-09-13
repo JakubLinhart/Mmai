@@ -1,259 +1,26 @@
-﻿var speciesSet = [
-    {
-        name: "Sycek",
-        sets: [
-            {
-                name: "Jiřička Hrůzostrašná",
-                subSets: [
-                    [
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_10.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_11.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_12.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_14.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_15.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_16.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_20.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_22.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_25.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_27.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_31.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_33.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_38.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_40.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_42.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_44.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_47.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_49.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_51.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_52.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_53.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_54.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_58.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_6.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_64.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_66.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_68.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_69.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_70.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_72.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_73.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_74.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_8.wav",
-                        "sounds/sycek/001/108_ci_109_2013/108_ci_109_2013_9.wav"
-                    ],
-                    [
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_10.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_11.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_12.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_13.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_14.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_15.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_16.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_17.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_18.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_19.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_2.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_20.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_21.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_3.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_4.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_5.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_6.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_7.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_8.wav",
-                        "sounds/sycek/001/108-109b_2014/108-109b_2014_9.wav",
-                    ]
-                ]
-            },
-            {
-                name: "Satan Klausův",
-                subSets: [
-                    [
-                        "sounds/sycek/002/193_2013/193_2013_10.wav",
-                        "sounds/sycek/002/193_2013/193_2013_11.wav",
-                        "sounds/sycek/002/193_2013/193_2013_12.wav",
-                        "sounds/sycek/002/193_2013/193_2013_13.wav",
-                        "sounds/sycek/002/193_2013/193_2013_14.wav",
-                        "sounds/sycek/002/193_2013/193_2013_15.wav",
-                        "sounds/sycek/002/193_2013/193_2013_16.wav",
-                        "sounds/sycek/002/193_2013/193_2013_17.wav",
-                        "sounds/sycek/002/193_2013/193_2013_18.wav",
-                        "sounds/sycek/002/193_2013/193_2013_19.wav",
-                        "sounds/sycek/002/193_2013/193_2013_2.wav",
-                        "sounds/sycek/002/193_2013/193_2013_20.wav",
-                        "sounds/sycek/002/193_2013/193_2013_21.wav",
-                        "sounds/sycek/002/193_2013/193_2013_22.wav",
-                        "sounds/sycek/002/193_2013/193_2013_23.wav",
-                        "sounds/sycek/002/193_2013/193_2013_24.wav",
-                        "sounds/sycek/002/193_2013/193_2013_25.wav",
-                        "sounds/sycek/002/193_2013/193_2013_3.wav",
-                        "sounds/sycek/002/193_2013/193_2013_5.wav",
-                        "sounds/sycek/002/193_2013/193_2013_6.wav",
-                        "sounds/sycek/002/193_2013/193_2013_7.wav",
-                        "sounds/sycek/002/193_2013/193_2013_8.wav",
-                        "sounds/sycek/002/193_2013/193_2013_9.wav",
-                    ],
-                    [
-                        "sounds/sycek/002/193b_2014/193b_2014_1.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_10.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_11.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_12.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_13.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_14.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_15.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_16.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_17.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_18.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_19.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_2.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_20.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_21.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_22.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_23.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_24.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_25.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_26.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_27.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_3.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_4.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_5.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_6.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_7.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_8.wav",
-                        "sounds/sycek/002/193b_2014/193b_2014_9.wav",
-                    ]
-                ]
-            },
-            {
-                name: "Krůta Ukrutná",
-                subSets: [
-                    [
-                        "sounds/sycek/003/229_spont_2013/229_spont_2013_10.wav",
-                        "sounds/sycek/003/229_spont_2013/229_spont_2013_11.wav",
-                        "sounds/sycek/003/229_spont_2013/229_spont_2013_12.wav",
-                        "sounds/sycek/003/229_spont_2013/229_spont_2013_13.wav",
-                        "sounds/sycek/003/229_spont_2013/229_spont_2013_14.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_15.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_16.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_17.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_18.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_19.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_2.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_3.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_4.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_5.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_6.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_7.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_8.wav",
-                        "sounds/003/229_spont_2013/229_spont_2013_9.wav"
-                    ],
-                    [
-                        "sounds/003/229b_2014/229b_2014_10.wav",
-                        "sounds/003/229b_2014/229b_2014_11.wav",
-                        "sounds/003/229b_2014/229b_2014_12.wav",
-                        "sounds/003/229b_2014/229b_2014_13.wav",
-                        "sounds/003/229b_2014/229b_2014_14.wav",
-                        "sounds/003/229b_2014/229b_2014_15.wav",
-                        "sounds/003/229b_2014/229b_2014_16.wav",
-                        "sounds/003/229b_2014/229b_2014_17.wav",
-                        "sounds/003/229b_2014/229b_2014_18.wav",
-                        "sounds/003/229b_2014/229b_2014_19.wav",
-                        "sounds/003/229b_2014/229b_2014_2.wav",
-                        "sounds/003/229b_2014/229b_2014_20.wav",
-                        "sounds/003/229b_2014/229b_2014_21.wav",
-                        "sounds/003/229b_2014/229b_2014_22.wav",
-                        "sounds/003/229b_2014/229b_2014_23.wav",
-                        "sounds/003/229b_2014/229b_2014_24.wav",
-                        "sounds/003/229b_2014/229b_2014_25.wav",
-                        "sounds/003/229b_2014/229b_2014_3.wav",
-                        "sounds/003/229b_2014/229b_2014_4.wav",
-                        "sounds/003/229b_2014/229b_2014_5.wav",
-                        "sounds/003/229b_2014/229b_2014_6.wav",
-                        "sounds/003/229b_2014/229b_2014_7.wav",
-                        "sounds/003/229b_2014/229b_2014_8.wav",
-                        "sounds/003/229b_2014/229b_2014_9.wav",
-                    ]
-                ]
-            },
-            {
-                name: "Pěnkava Umrlá",
-                subSets: [
-                    [
-                        "sounds/004/7_2013/7_2013_1.wav",
-                        "sounds/004/7_2013/7_2013_12.wav",
-                        "sounds/004/7_2013/7_2013_13.wav",
-                        "sounds/004/7_2013/7_2013_14.wav",
-                        "sounds/004/7_2013/7_2013_15.wav",
-                        "sounds/004/7_2013/7_2013_16.wav",
-                        "sounds/004/7_2013/7_2013_17.wav",
-                        "sounds/004/7_2013/7_2013_2.wav",
-                        "sounds/004/7_2013/7_2013_4.wav",
-                        "sounds/004/7_2013/7_2013_8.wav",
-                    ],
-                    [
-                        "sounds/004/7_2014/7_2014_10.wav",
-                        "sounds/004/7_2014/7_2014_11.wav",
-                        "sounds/004/7_2014/7_2014_12.wav",
-                        "sounds/004/7_2014/7_2014_13.wav",
-                        "sounds/004/7_2014/7_2014_14.wav",
-                        "sounds/004/7_2014/7_2014_15.wav",
-                        "sounds/004/7_2014/7_2014_16.wav",
-                        "sounds/004/7_2014/7_2014_17.wav",
-                        "sounds/004/7_2014/7_2014_2.wav",
-                        "sounds/004/7_2014/7_2014_3.wav",
-                        "sounds/004/7_2014/7_2014_4.wav",
-                        "sounds/004/7_2014/7_2014_5.wav",
-                        "sounds/004/7_2014/7_2014_6.wav",
-                        "sounds/004/7_2014/7_2014_7.wav",
-                        "sounds/004/7_2014/7_2014_8.wav",
-                        "sounds/004/7_2014/7_2014_9.wav"
-                    ]
-                ]
-            },
-            {
-                name: "Ostuda Obecná",
-                subSets: [
-                    [
-                        "sounds/005/94_2013/94_2013_10.wav",
-                        "sounds/005/94_2013/94_2013_2.wav",
-                        "sounds/005/94_2013/94_2013_3.wav",
-                        "sounds/005/94_2013/94_2013_4.wav",
-                        "sounds/005/94_2013/94_2013_5.wav",
-                    ],
-                    [
-                        "sounds/005/94_2014/94_2014_10.wav",
-                        "sounds/005/94_2014/94_2014_11.wav",
-                        "sounds/005/94_2014/94_2014_12.wav",
-                        "sounds/005/94_2014/94_2014_13.wav",
-                        "sounds/005/94_2014/94_2014_14.wav",
-                        "sounds/005/94_2014/94_2014_15.wav",
-                        "sounds/005/94_2014/94_2014_16.wav",
-                        "sounds/005/94_2014/94_2014_17.wav",
-                        "sounds/005/94_2014/94_2014_2.wav",
-                        "sounds/005/94_2014/94_2014_3.wav",
-                        "sounds/005/94_2014/94_2014_4.wav",
-                        "sounds/005/94_2014/94_2014_5.wav",
-                        "sounds/005/94_2014/94_2014_6.wav",
-                        "sounds/005/94_2014/94_2014_7.wav",
-                        "sounds/005/94_2014/94_2014_8.wav",
-                        "sounds/005/94_2014/94_2014_9.wav"
-                    ]
-                ]
-            }
-        ]
-    }
-]
-
-function getRandomInt(min, max) {
+﻿function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-var currentSpeciesIndex = 0;
-
 (function () {
-    $.getJSON("/api/species/" + speciesName, function (data) {
-        game(data);
-    });
+    var maxCardCount = 12;
+
+    function startGame(name) {
+        for (var i = 0; i < maxCardCount; i++) {
+            cardId = "#card" + i;
+            $(cardId).removeClass("cardCovered")
+                .removeClass("cardUncovered")
+                .removeClass("cardPlaying")
+                .off("click")
+                .empty()
+        }
+
+        $.getJSON("/api/species/" + name, function (data) {
+            game(data);
+        });
+    }
+
+    startGame(speciesName);
 
     function game(species) {
         function postGameFinished() {
@@ -312,6 +79,25 @@ var currentSpeciesIndex = 0;
             });
         }
 
+        function finishGame() {
+            postGameEvent("match", card.url);
+            postGameFinished();
+            if (matchCount >= cardCount) {
+                for (var i = 0; i < cardCount; i++) {
+                    console.log(cards[i]);
+                    $(cards[i].cardId).text(cards[i].name);
+                }
+            }
+
+            $('#next-game')
+                .removeClass("hidden")
+                .text("next game")
+                .off("click")
+                .on("click", function () {
+                    startGame("nextrandom");
+                });
+        }
+
         var voiceSets = species.sets;
         var soundPlaying = false;
         var cardCount = species.cardCount;
@@ -323,10 +109,9 @@ var currentSpeciesIndex = 0;
         var gameId = null;
         var movesCount = 0;
 
-        if (cardCount > setsCount * 2) {
-            // TODO:
-            alert('More cards than sets.')
-        }
+        $('#next-game')
+            .off("click")
+            .addClass("hidden");
 
         var cards = [];
         var randomizedSpecies = [];
@@ -374,71 +159,65 @@ var currentSpeciesIndex = 0;
         for (var i = 0; i < cardCount; i++) {
             cards[i].cardId = "#card" + i;
             var card = cards[i];
-            $(card.cardId).addClass("cardCovered");
-            $(card.cardId).empty();
             console.log(card);
 
-            $(document).on("click", card.cardId, card, function (e) {
-                if (soundPlaying)
-                    return;
+            $(card.cardId).addClass("cardCovered")
+                .on("click", card, function (e) {
+                    if (soundPlaying)
+                        return;
 
-                soundPlaying = true;
-                var cardId = e.data.cardId;
-                var url = e.data.url;
-                var card = e.data;
+                    soundPlaying = true;
+                    var cardId = e.data.cardId;
+                    var url = e.data.url;
+                    var card = e.data;
 
-                $(cardId).addClass("cardPlaying");
-                $(cardId).removeClass("cardCovered");
-                $(cardId).addClass("cardUncovered");
-                var audio = new Audio(url);
-                audio.onended = function () {
-                    $(card.cardId).removeClass("cardPlaying");
-                    soundPlaying = false;
+                    $(cardId)
+                        .addClass("cardPlaying")
+                        .removeClass("cardCovered")
+                        .addClass("cardUncovered");
+                    var audio = new Audio(url);
+                    audio.onended = function () {
+                        $(card.cardId).removeClass("cardPlaying");
+                        soundPlaying = false;
 
-                    console.log("Sound finished for card: ");
-                    console.log(card);
-                    console.log("First selected card: " + firstSelectedCard);
-                    console.log(firstSelectedCard);
+                        console.log("Sound finished for card: ");
+                        console.log(card);
+                        console.log("First selected card: " + firstSelectedCard);
+                        console.log(firstSelectedCard);
 
-                    if (matchCount < cardCount) {
-                        movesCount++;
-                        console.log("matchCount " + matchCount + "; cardCount " + cardCount);
-                        if (firstSelectedCard != null && firstSelectedCard.cardId != card.cardId) {
-                            if (firstSelectedCard.setIndex != card.setIndex) {
-                                $(card.cardId).removeClass("cardUncovered");
-                                $(card.cardId).addClass("cardCovered");
-                                $(firstSelectedCard.cardId).removeClass("cardUncovered");
-                                $(firstSelectedCard.cardId).addClass("cardCovered");
-                                postGameEvent("mismatch", card.url);
+                        if (matchCount < cardCount) {
+                            movesCount++;
+                            console.log("matchCount " + matchCount + "; cardCount " + cardCount);
+                            if (firstSelectedCard != null && firstSelectedCard.cardId != card.cardId) {
+                                if (firstSelectedCard.setIndex != card.setIndex) {
+                                    $(card.cardId).removeClass("cardUncovered");
+                                    $(card.cardId).addClass("cardCovered");
+                                    $(firstSelectedCard.cardId).removeClass("cardUncovered");
+                                    $(firstSelectedCard.cardId).addClass("cardCovered");
+                                    postGameEvent("mismatch", card.url);
+                                }
+                                else {
+                                    matchCount += 2;
+                                    console.log(matchCount + ", " + cardCount)
+                                    if (matchCount >= cardCount) {
+                                        finishGame();
+                                    }
+                                }
+                                firstSelectedCard = null;
                             }
                             else {
-                                matchCount += 2;
-                                console.log(matchCount + ", " + cardCount)
-                                if (matchCount >= cardCount) {
-                                    for (var i = 0; i < cardCount; i++) {
-                                        console.log(cards[i]);
-                                        $(cards[i].cardId).text(cards[i].name);
-                                    }
-                                    won = true;
-                                }
-                                postGameEvent("match", card.url);
-                                postGameFinished();
+                                postGameEvent("first", card.url);
+                                firstSelectedCard = card;
                             }
-                            firstSelectedCard = null;
                         }
                         else {
-                            postGameEvent("first", card.url);
-                            firstSelectedCard = card;
+                            postGameEvent("after the win", card.url);
                         }
                     }
-                    else {
-                        postGameEvent("after the win", card.url);
-                    }
-                }
-                audio.play();
-                console.log("Card selected: ");
-                console.log(card)
-            });
+                    audio.play();
+                    console.log("Card selected: ");
+                    console.log(card)
+                });
         }
     }
 })();
