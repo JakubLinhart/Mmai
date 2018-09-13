@@ -26,7 +26,7 @@ namespace Mmai.Controllers
             {
                 var options = new CookieOptions();
                 options.Expires = DateTime.Now.AddDays(14);
-                Response.Cookies.Append("playerId", repository.NewGuid(), options);
+                Response.Cookies.Append("playerId", Helpers.NewGuid(), options);
             }
 
             return View();

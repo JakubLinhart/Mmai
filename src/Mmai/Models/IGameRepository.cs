@@ -8,5 +8,6 @@ namespace Mmai.Models
     public interface IGameRepository
     {
         Task<Game> Insert(Game game);
+        Task<IEnumerable<Game>> GetAll();
     }
 }

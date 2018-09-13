@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using Microsoft.WindowsAzure.Storage.Table;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Mmai.Models
 {
@@ -13,6 +11,8 @@ namespace Mmai.Models
             : base("games", configuration)
         {
         }
+
+        public Task<IEnumerable<Game>> GetAll() => ExecuteQueryAsync(new TableQuery<Game>());
 
         public async Task<Game> Insert(Game game)
         {

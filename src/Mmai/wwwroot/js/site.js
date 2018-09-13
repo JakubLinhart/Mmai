@@ -266,7 +266,7 @@ function getRandomInt(min, max) {
         });
 
         $.ajax({
-            url: "/api/games/finish/",
+            url: "/api/games/",
             type: "post",
             data: data,
             dataType: "json",

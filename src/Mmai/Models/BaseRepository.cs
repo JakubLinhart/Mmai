@@ -19,5 +19,22 @@ namespace Mmai.Models
             var tableClient = storageAccount.CreateCloudTableClient();
             Table = tableClient.GetTableReference(tableName);
         }
+
+        protected async Task<IEnumerable<T>> ExecuteQueryAsync<T>(TableQuery<T> query) where T : ITableEntity, new()
+        {
+            var items = new List<T>();
+            TableContinuationToken token = null;
+
+            do
+            {
+                TableQuerySegment<T> seg = await Table.ExecuteQuerySegmentedAsync<T>(query, token);
+                token = seg.ContinuationToken;
+                items.AddRange(seg);
+
+            } while (token != null);
+
+            return items;
+        }
+
     }
 }

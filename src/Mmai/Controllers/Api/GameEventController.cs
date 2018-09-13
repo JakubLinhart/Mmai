@@ -31,14 +31,9 @@ namespace Mmai.Controllers.Api
         public async Task<ActionResult> GetCsv()
         {
             var events = await repository.GetAll();
-            var stream = new MemoryStream();
-            var writer = new StreamWriter(stream);
-            var csvWriter = new CsvWriter(writer);
 
-            csvWriter.WriteRecords<GameEvent>(events);
-            await csvWriter.FlushAsync();
+            return await this.Csv(events, "events.csv");
 
-            return File(stream.GetBuffer(), "application/CSV", "events.csv");
         }
 
         [HttpPost]
@@ -47,7 +42,7 @@ namespace Mmai.Controllers.Api
             var playerId = Request.Cookies["playerId"];
 
             if (string.IsNullOrEmpty(value.GameId))
-                value.GameId = repository.NewGuid();
+                value.GameId = Helpers.NewGuid();
             value.PlayerId = playerId;
 
             var result = await repository.Insert(value);

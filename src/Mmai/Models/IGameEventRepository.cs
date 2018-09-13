@@ -9,7 +9,5 @@ namespace Mmai.Models
     {
         Task<GameEvent> Insert(GameEvent gameEvent);
         Task<IEnumerable<GameEvent>> GetAll();
-
-        string NewGuid();
     }
 }
