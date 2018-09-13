@@ -18,7 +18,7 @@ namespace Mmai.Controllers
             this.repository = repository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string id)
         {
             var playerId = Request.Cookies["playerId"];
 
@@ -28,6 +28,8 @@ namespace Mmai.Controllers
                 options.Expires = DateTime.Now.AddDays(14);
                 Response.Cookies.Append("playerId", Helpers.NewGuid(), options);
             }
+
+            ViewData["speciesName"] = id;
 
             return View();
         }
