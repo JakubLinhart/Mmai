@@ -15,8 +15,11 @@
                 .empty()
         }
 
+        $("#leaderboard").addClass("hidden");
+
         $.getJSON("/api/species/" + name, function (data) {
             game(data);
+            speciesName = data.name;
         });
     }
 
@@ -31,7 +34,8 @@
                 id: gameId,
                 duration: gameDuration,
                 finishedTime: now,
-                movesCount: movesCount
+                movesCount: movesCount,
+                speciesName: speciesName
             });
 
             $.ajax({
@@ -79,6 +83,19 @@
             });
         }
 
+        function fillLeaderBoard() {
+            var url = "/api/leaderboard/" + speciesName;
+            $.getJSON(url, function (leaderboard) {
+                $("#leaderboard-table").find("tr:gt(0)").remove();
+                $.each(leaderboard.items, function (i, item) {
+                    $("#leaderboard-table")
+                        .append("<tr><td>" + item.name + "</td><td>" + item.movesCount + "</td></tr>");
+                });
+                $('#leaderboard-name').text(leaderboard.name);
+                $('#leaderboard').removeClass('hidden');
+            });
+        }
+
         function finishGame() {
             postGameEvent("match", card.url);
             postGameFinished();
@@ -96,6 +113,8 @@
                 .on("click", function () {
                     startGame("nextrandom");
                 });
+
+            fillLeaderBoard();
         }
 
         var voiceSets = species.sets;

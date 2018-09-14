@@ -9,6 +9,7 @@ namespace Mmai.Models
     public class Game : TableEntity
     {
         public string PlayerId { get; set; }
+        public string SpeciesName { get; set; }
         public string Id { get; set; }
         public DateTime FinishedTime { get; set; }
         public int Duration { get; set; }
