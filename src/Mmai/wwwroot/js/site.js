@@ -63,7 +63,8 @@
                 card: card,
                 time: now,
                 millisecondsSinceLastEvent: sinceLastEvent,
-                gameId: gameId
+                gameId: gameId,
+                speciesName: speciesName
             });
             lastEventTime = now;
             $.ajax({

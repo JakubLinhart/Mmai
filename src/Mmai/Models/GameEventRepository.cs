@@ -20,7 +20,7 @@ namespace Mmai.Models
             await Table.CreateIfNotExistsAsync();
 
             gameEvent.PartitionKey = gameEvent.PlayerId;
-            gameEvent.RowKey = Helpers.NewGuid();
+            gameEvent.RowKey = gameEvent.Time.Ticks.ToString() + gameEvent.GameId;
 
             await Table.ExecuteAsync(TableOperation.Insert(gameEvent));
             return gameEvent;
