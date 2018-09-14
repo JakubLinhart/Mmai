@@ -217,6 +217,7 @@
                                     postGameEvent("mismatch", card.url);
                                 }
                                 else {
+                                    postGameEvent("match", card.url);
                                     matchCount += 2;
                                     console.log(matchCount + ", " + cardCount)
                                     if (matchCount >= cardCount) {
