@@ -3,18 +3,8 @@
 }
 
 (function () {
-    var maxCardCount = 12;
-
     function startGame(name) {
-        for (var i = 0; i < maxCardCount; i++) {
-            cardId = "#card" + i;
-            $(cardId).removeClass("cardCovered")
-                .removeClass("cardUncovered")
-                .removeClass("cardPlaying")
-                .off("click")
-                .empty()
-        }
-
+        $("#cards").empty();
         $("#leaderboard").addClass("hidden");
 
         $.getJSON("/api/species/" + name, function (data) {
@@ -121,6 +111,7 @@
         var voiceSets = species.sets;
         var soundPlaying = false;
         var cardCount = species.cardCount;
+        var columnCount = species.columnCount;
         var setsCount = voiceSets.length;
         var firstSelectedCard = null;
         var matchCount = 0;
@@ -132,6 +123,26 @@
         $('#next-game')
             .off("click")
             .addClass("hidden");
+
+        var colIdx = 0;
+        var rowIdx = 0;
+        for (var i = 0; i < cardCount; i++)
+        {
+            if (colIdx == 0) {
+                rowId = "row" + rowIdx;
+
+                $("#cards").append("<div class='row' id='" + rowId + "'></div>");
+            }
+
+            cardId = "card" + i;
+            $('#' + rowId).append("<div class='card cardCovered' id='" + cardId + "'></div>")
+
+            colIdx++;
+            if (colIdx == columnCount) {
+                rowIdx++;
+                colIdx = 0;
+            }
+        }
 
         var cards = [];
         var randomizedSpecies = [];

@@ -14,9 +14,9 @@ namespace Mmai.Models
             this.environment = environment;
             speciesStubs = new Dictionary<string, SpeciesStub>(StringComparer.OrdinalIgnoreCase)
             {
-                { "sycek", new SpeciesStub(@"\sounds\sycek\", "sycek", 10, CreateSpecies) },
-                { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 12, CreateSpecies) },
-                { "3vars", new SpeciesStub(@"\sounds\3vars\", "3vars", 12, CreateSpecies)}
+                { "sycek", new SpeciesStub(@"\sounds\sycek\", "sycek", 10, 3, CreateSpecies) },
+                { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 20, 5, CreateSpecies) },
+                { "3vars", new SpeciesStub(@"\sounds\3vars\", "3vars", 20, 5, CreateSpecies)}
             };
         }
 
@@ -24,14 +24,16 @@ namespace Mmai.Models
         {
             public string Path { get; }
             public int CardCount { get; }
+            public int ColumnCount { get; }
             public string Name { get; }
             public Lazy<Species> Species { get; }
 
-            public SpeciesStub(string path, string name, int cardCount, Func<SpeciesStub, Species> speciesFactory)
+            public SpeciesStub(string path, string name, int cardCount, int columnCount, Func<SpeciesStub, Species> speciesFactory)
             {
                 Path = path;
                 Name = name;
                 CardCount = cardCount;
+                ColumnCount = columnCount;
                 Species = new Lazy<Species>(() => speciesFactory(this), true);
             }
         }
@@ -84,6 +86,7 @@ namespace Mmai.Models
             var species = new Species();
             species.Name = stub.Name;
             species.CardCount = stub.CardCount;
+            species.ColumnCount = stub.ColumnCount;
             species.Sets = setList.ToArray();
 
             return species;

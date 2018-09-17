@@ -9,12 +9,7 @@ namespace Mmai.Models
     {
         public string Name { get; set; }
         public int CardCount { get; set; }
+        public int ColumnCount { get; set; }
         public SpeciesVoiceSet[] Sets { get; set; }
-    }
-
-    public class SpeciesVoiceSet
-    {
-        public string Name { get; set; }
-        public string[][] SubSets { get; set; }
     }
 }
