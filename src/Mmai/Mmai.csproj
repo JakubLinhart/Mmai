@@ -3,11 +3,14 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>63a9acf3-00ce-4295-88dc-6cac96de7c13</UserSecretsId>
+    <ApplicationInsightsResourceId>/subscriptions/a7756e21-6bfb-4d62-a4c8-9612baf6052e/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Mmai</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/a7756e21-6bfb-4d62-a4c8-9612baf6052e/resourcegroups/Default-ApplicationInsights-EastUS/providers/microsoft.insights/components/Mmai</ApplicationInsightsAnnotationResourceId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="BuildBundlerMinifier" Version="2.8.391" />
     <PackageReference Include="CsvHelper" Version="7.1.1" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="2.1.1" />
     <PackageReference Include="WindowsAzure.Storage" Version="9.3.1" />
@@ -15,6 +18,10 @@
 
   <ItemGroup>
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
   </ItemGroup>
 
 </Project>
