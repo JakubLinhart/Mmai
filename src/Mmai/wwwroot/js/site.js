@@ -3,6 +3,24 @@
 }
 
 (function () {
+    $("#nickname").on("change", function () { changePlayer(); });
+    $("#email").on("change", function () { changePlayer(); });
+
+    function changePlayer() {
+        var data = JSON.stringify({
+            nickName: $("#nickname").val(),
+            email: $("#email").val()
+        });
+        $.ajax({
+            url: "/api/players/",
+            type: "post",
+            data: data,
+            dataType: "json",
+            accept: 'application/json',
+            contentType: "application/json"
+        });
+    }
+
     function startGame(name) {
         $("#cards").empty();
         $("#leaderboard").addClass("hidden");
@@ -75,15 +93,22 @@
         }
 
         function fillLeaderBoard() {
-            var url = "/api/leaderboard/" + speciesName;
-            $.getJSON(url, function (leaderboard) {
-                $("#leaderboard-table").find("tr:gt(0)").remove();
-                $.each(leaderboard.items, function (i, item) {
-                    $("#leaderboard-table")
-                        .append("<tr><td>" + item.name + "</td><td>" + item.movesCount + "</td></tr>");
+            $.getJSON("/api/players", function (player) {
+                var url = "/api/leaderboard/top10/" + speciesName;
+                $.getJSON(url, function (leaderboard) {
+                    $("#leaderboard-table").find("tr:gt(0)").remove();
+                    $.each(leaderboard.items, function (i, item) {
+                        $("#leaderboard-table")
+                            .append("<tr><td>" + item.nickName + "</td><td>" + item.movesCount + "</td></tr>");
+                    });
+                    $('#leaderboard-name').text(leaderboard.name);
+                    $('#leaderboard').removeClass('hidden');
                 });
-                $('#leaderboard-name').text(leaderboard.name);
-                $('#leaderboard').removeClass('hidden');
+
+                if (player != null) {
+                    $("#nickname").val(player.nickName);
+                    $("#email").val(player.email);
+                }
             });
         }
 
@@ -126,8 +151,7 @@
 
         var colIdx = 0;
         var rowIdx = 0;
-        for (var i = 0; i < cardCount; i++)
-        {
+        for (var i = 0; i < cardCount; i++) {
             if (colIdx == 0) {
                 rowId = "row" + rowIdx;
 

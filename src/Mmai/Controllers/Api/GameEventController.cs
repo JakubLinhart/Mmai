@@ -19,16 +19,16 @@ namespace Mmai.Controllers.Api
             this.repository = repository;
         }
 
-        [HttpGet]
-        public async Task<JsonResult> Get()
+        [HttpGet("all")]
+        public async Task<JsonResult> GetAll()
         {
             var events = await repository.GetAll();
 
             return Json(events);
         }
 
-        [HttpGet("csv")]
-        public async Task<ActionResult> GetCsv()
+        [HttpGet("all/csv")]
+        public async Task<ActionResult> GetAllCsv()
         {
             var events = await repository.GetAll();
 

@@ -3,7 +3,8 @@
 
     public class LeaderboardItem
     {
-        public string Name { get; set; }
+        public string NickName { get; set; }
+        public string PlayerId { get; set; }
         public int MovesCount { get; set; }
     }
 }

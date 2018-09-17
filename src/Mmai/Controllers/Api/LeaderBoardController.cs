@@ -17,12 +17,12 @@ namespace Mmai.Controllers.Api
             this.repository = repository;
         }
 
-        [HttpGet("{speciesName}")]
+        [HttpGet("top10/{speciesName}")]
         public async Task<JsonResult> Get(string speciesName)
         {
-            var leaderBoard = await repository.GetTopTen(speciesName);
+            var playerId = Request.Cookies["playerId"];
 
-            return Json(leaderBoard);
+            return Json(await repository.GetTopTen(playerId, speciesName));
         }
     }
 }

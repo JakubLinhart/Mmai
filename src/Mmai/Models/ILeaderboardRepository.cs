@@ -4,6 +4,6 @@ namespace Mmai.Models
 {
     public interface ILeaderboardRepository
     {
-        Task<Leaderboard> GetTopTen(string speciesName);
+        Task<Leaderboard> GetTopTen(string currentPlayerId, string speciesName);
     }
 }

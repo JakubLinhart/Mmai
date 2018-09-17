@@ -6,26 +6,41 @@ using System.Linq;
 
 namespace Mmai.Models
 {
-    internal sealed class LeaderboardRepository : BaseRepository, ILeaderboardRepository
+    internal sealed class LeaderboardRepository : ILeaderboardRepository
     {
-        public LeaderboardRepository(IConfiguration configuration) : base("games", configuration)
+        private readonly IGameRepository gameRepository;
+        private readonly IPlayerRepository playerRepository;
+
+        public LeaderboardRepository(IConfiguration configuration, IGameRepository gameRepository,
+            IPlayerRepository playerRepository)
         {
+            this.gameRepository = gameRepository;
+            this.playerRepository = playerRepository;
         }
 
-        public async Task<Leaderboard> GetTopTen(string speciesName)
+        public async Task<Leaderboard> GetTopTen(string currentPlayerId, string speciesName)
         {
-            var games = await ExecuteQueryAsync(new TableQuery<Game>());
+            var games = await gameRepository.GetAll();
             bool isDefaultSpecies = speciesName.Equals("sycek", StringComparison.OrdinalIgnoreCase);
             var items = games
                 .Where(x => (x.SpeciesName != null && x.SpeciesName.Equals(speciesName)) || (isDefaultSpecies && x.SpeciesName == null))
                 .GroupBy(x => x.PlayerId)
                 .Select(x => new LeaderboardItem
                 {
-                    MovesCount = x.Max(y => y.MovesCount),
-                    Name = x.First().PlayerId
+                    MovesCount = x.Min(y => y.MovesCount),
+                    PlayerId = x.First().PlayerId
                 })
                 .OrderBy(x => x.MovesCount)
-                .Take(10);
+                .Take(10)
+                .ToArray();
+
+            foreach (var item in items)
+            {
+                var player = await playerRepository.GetPlayer(item.PlayerId);
+                item.NickName = player?.NickName
+                    ?? (currentPlayerId != null && item.PlayerId.Equals(currentPlayerId, StringComparison.OrdinalIgnoreCase) 
+                        ? "anonymous (you)" : "anonymous");
+            }
 
             return new Leaderboard
             {
