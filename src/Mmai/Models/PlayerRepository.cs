@@ -37,6 +37,7 @@ namespace Mmai.Models
 
             var player = new Player()
             {
+                Id = playerId,
                 RowKey = playerId,
                 PartitionKey = playerId,
                 NickName = nickName,

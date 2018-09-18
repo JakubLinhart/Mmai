@@ -87,7 +87,7 @@
                     gameId = data;
                 },
                 error: function (result) {
-                    alert(result);
+                    console.log(result);
                 }
             });
         }
@@ -144,6 +144,8 @@
         var gameStartedTime = null;
         var gameId = null;
         var movesCount = 0;
+
+        $('#game-description').text(species.description);
 
         $('#next-game')
             .off("click")

@@ -8,6 +8,7 @@ namespace Mmai.Models
 {
     public class Player : TableEntity
     {
+        public string Id { get; set; }
         public string NickName { get; set; }
         public string Email { get; set; }
     }

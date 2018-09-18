@@ -14,9 +14,12 @@ namespace Mmai.Models
             this.environment = environment;
             speciesStubs = new Dictionary<string, SpeciesStub>(StringComparer.OrdinalIgnoreCase)
             {
-                { "sycek", new SpeciesStub(@"\sounds\sycek\", "sycek", 10, 3, CreateSpecies) },
-                { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 20, 5, CreateSpecies) },
-                { "3vars", new SpeciesStub(@"\sounds\3vars\", "3vars", 20, 5, CreateSpecies)}
+                { "sycek", new SpeciesStub(@"\sounds\sycek\", "sycek", 10, 3, CreateSpecies,
+                    "In the first game, you will hear the territorial calls of Little owl (Athene noctua).") },
+                { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 20, 5, CreateSpecies,
+                    "In subsequent games, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment.") },
+                { "3vars", new SpeciesStub(@"\sounds\3vars\", "3vars", 20, 5, CreateSpecies,
+                    "In subsequent games, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment. ")}
             };
         }
 
@@ -26,15 +29,18 @@ namespace Mmai.Models
             public int CardCount { get; }
             public int ColumnCount { get; }
             public string Name { get; }
+            public string Description { get; set; }
             public Lazy<Species> Species { get; }
 
-            public SpeciesStub(string path, string name, int cardCount, int columnCount, Func<SpeciesStub, Species> speciesFactory)
+            public SpeciesStub(string path, string name, int cardCount, int columnCount, Func<SpeciesStub, Species> speciesFactory,
+                string description)
             {
                 Path = path;
                 Name = name;
                 CardCount = cardCount;
                 ColumnCount = columnCount;
                 Species = new Lazy<Species>(() => speciesFactory(this), true);
+                Description = description;
             }
         }
 
@@ -45,32 +51,32 @@ namespace Mmai.Models
         {
             string path = stub.Path;
 
-            var setsDirectories = environment.WebRootFileProvider.GetDirectoryContents(path);
-            var setList = new List<SpeciesVoiceSet>();
-            foreach (var setDirectory in setsDirectories)
+            Microsoft.Extensions.FileProviders.IDirectoryContents setsDirectories = environment.WebRootFileProvider.GetDirectoryContents(path);
+            List<SpeciesVoiceSet> setList = new List<SpeciesVoiceSet>();
+            foreach (Microsoft.Extensions.FileProviders.IFileInfo setDirectory in setsDirectories)
             {
                 if (setDirectory.IsDirectory)
                 {
-                    var voiceSet = new SpeciesVoiceSet();
+                    SpeciesVoiceSet voiceSet = new SpeciesVoiceSet();
                     voiceSet.Name = setDirectory.Name;
-                    var subSets = new List<string[]>();
+                    List<string[]> subSets = new List<string[]>();
 
-                    var setPath = Path.Combine(path, setDirectory.Name);
+                    string setPath = Path.Combine(path, setDirectory.Name);
 
-                    var subSetDirectories = environment.WebRootFileProvider.GetDirectoryContents(setPath);
-                    foreach (var subSetDirectory in subSetDirectories)
+                    Microsoft.Extensions.FileProviders.IDirectoryContents subSetDirectories = environment.WebRootFileProvider.GetDirectoryContents(setPath);
+                    foreach (Microsoft.Extensions.FileProviders.IFileInfo subSetDirectory in subSetDirectories)
                     {
                         if (subSetDirectory.IsDirectory)
                         {
-                            var subSet = new List<string>();
-                            var subSetPath = Path.Combine(setPath, subSetDirectory.Name);
-                            var subSetFiles = environment.WebRootFileProvider.GetDirectoryContents(subSetPath);
+                            List<string> subSet = new List<string>();
+                            string subSetPath = Path.Combine(setPath, subSetDirectory.Name);
+                            Microsoft.Extensions.FileProviders.IDirectoryContents subSetFiles = environment.WebRootFileProvider.GetDirectoryContents(subSetPath);
 
-                            foreach (var file in subSetFiles)
+                            foreach (Microsoft.Extensions.FileProviders.IFileInfo file in subSetFiles)
                             {
                                 if (!file.IsDirectory)
                                 {
-                                    var fileName = Path.Combine(subSetPath, file.Name).Replace('\\', '/');
+                                    string fileName = Path.Combine(subSetPath, file.Name).Replace('\\', '/');
                                     subSet.Add(fileName);
                                 }
                             }
@@ -83,11 +89,12 @@ namespace Mmai.Models
                 }
             }
 
-            var species = new Species();
+            Species species = new Species();
             species.Name = stub.Name;
             species.CardCount = stub.CardCount;
             species.ColumnCount = stub.ColumnCount;
             species.Sets = setList.ToArray();
+            species.Description = stub.Description;
 
             return species;
         }
@@ -98,11 +105,11 @@ namespace Mmai.Models
         {
             if (name.Equals("nextrandom", StringComparison.OrdinalIgnoreCase))
             {
-                var idx = random.Next(0, nextGameSpecies.Length);
+                int idx = random.Next(0, nextGameSpecies.Length);
                 name = nextGameSpecies[idx];
             }
 
-            var stub = speciesStubs[name];
+            SpeciesStub stub = speciesStubs[name];
             return stub.Species.Value;
         }
     }
