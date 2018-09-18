@@ -21,7 +21,7 @@ namespace Mmai.Models
         public async Task<Leaderboard> GetTopTen(string currentPlayerId, string speciesName)
         {
             var games = await gameRepository.GetAll();
-            bool isDefaultSpecies = speciesName.Equals("sycek", StringComparison.OrdinalIgnoreCase);
+            bool isDefaultSpecies = speciesName.Equals("littleowl", StringComparison.OrdinalIgnoreCase);
             var items = games
                 .Where(x => (x.SpeciesName != null && x.SpeciesName.Equals(speciesName)) || (isDefaultSpecies && x.SpeciesName == null))
                 .GroupBy(x => x.PlayerId)

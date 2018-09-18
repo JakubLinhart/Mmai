@@ -14,7 +14,7 @@ namespace Mmai.Models
             this.environment = environment;
             speciesStubs = new Dictionary<string, SpeciesStub>(StringComparer.OrdinalIgnoreCase)
             {
-                { "sycek", new SpeciesStub(@"\sounds\sycek\", "sycek", 10, 3, CreateSpecies,
+                { "littleowl", new SpeciesStub(@"\sounds\littleowl\", "Little Owl", 20, 5, CreateSpecies,
                     "In the first game, you will hear the territorial calls of Little owl (Athene noctua).") },
                 { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 20, 5, CreateSpecies,
                     "In subsequent games, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment.") },
