@@ -79,10 +79,10 @@
                 }
             });
 
-            postGameEvent("started", null);
+            postGameEvent("started", null, null);
         }
 
-        function postGameEvent(label, card) {
+        function postGameEvent(label, card, cardIndex) {
             var now = new Date();
             var sinceLastEvent;
 
@@ -98,7 +98,9 @@
                 time: now,
                 millisecondsSinceLastEvent: sinceLastEvent,
                 gameId: gameId,
-                speciesName: speciesName
+                speciesName: speciesName,
+                row: Math.floor(cardIndex / columnCount),
+                column: cardIndex % columnCount
             });
             lastEventTime = now;
             $.ajax({
@@ -136,7 +138,6 @@
         }
 
         function finishGame() {
-            postGameEvent("match", card.url);
             postGameFinished();
             if (matchCount >= cardCount) {
                 for (var i = 0; i < cardCount; i++) {
@@ -237,6 +238,7 @@
         gameStartedTime = new Date();
         postGameStarted();
         for (var i = 0; i < cardCount; i++) {
+            cards[i].index = i;
             cards[i].cardId = "#card" + i;
             var card = cards[i];
             console.log(card);
@@ -282,25 +284,29 @@
                                     $(card.cardId).addClass("cardCovered");
                                     $(firstSelectedCard.cardId).removeClass("cardUncovered");
                                     $(firstSelectedCard.cardId).addClass("cardCovered");
-                                    postGameEvent("mismatch", card.url);
+                                    postGameEvent("mismatch", card.url, card.index);
                                 }
                                 else {
-                                    postGameEvent("match", card.url);
                                     matchCount += 2;
                                     console.log(matchCount + ", " + cardCount)
                                     if (matchCount >= cardCount) {
+                                        postGameEvent("finished", card.url, card.index);
                                         finishGame();
                                     }
+                                    else {
+                                        postGameEvent("match", card.url, card.index);
+                                    }
+
                                 }
                                 firstSelectedCard = null;
                             }
                             else {
-                                postGameEvent("first", card.url);
+                                postGameEvent("first", card.url, card.index);
                                 firstSelectedCard = card;
                             }
                         }
                         else {
-                            postGameEvent("after the win", card.url);
+                            postGameEvent("after the win", card.url, card.index);
                         }
                     }
                     audio.play();
