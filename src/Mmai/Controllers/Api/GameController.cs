@@ -32,7 +32,7 @@ namespace Mmai.Controllers.Api
         {
             var games = await repository.GetAll();
 
-            return await this.Csv(games, "games.csv");
+            return this.Csv(games, "games.csv");
         }
 
         [HttpPost]

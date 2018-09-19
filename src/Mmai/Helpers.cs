@@ -16,15 +16,16 @@ namespace Mmai
         public static string GuidToBase64(Guid guid)
             => Convert.ToBase64String(guid.ToByteArray()).Replace("/", "-").Replace("+", "_").Replace("=", "");
 
-        public static async Task<FileContentResult> Csv<T>(this Controller controller, IEnumerable<T> elements, string name)
+        public static FileContentResult Csv<T>(this Controller controller, IEnumerable<T> elements, string name)
         {
-            using (var stream = new MemoryStream())
+            using (var stream = new MemoryStream(4096))
             {
                 var writer = new StreamWriter(stream);
                 var csvWriter = new CsvWriter(writer);
 
-                csvWriter.WriteRecords<T>(elements);
-                await csvWriter.FlushAsync();
+                csvWriter.WriteRecords(elements);
+                csvWriter.Flush();
+                writer.Flush();
 
                 return controller.File(stream.GetBuffer(), "application/CSV", name);
             }

@@ -32,7 +32,7 @@ namespace Mmai.Controllers.Api
         {
             var events = await repository.GetAll();
 
-            return await this.Csv(events, "events.csv");
+            return this.Csv(events, "events.csv");
 
         }
 
