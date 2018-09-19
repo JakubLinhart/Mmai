@@ -35,13 +35,22 @@ namespace Mmai.Controllers.Api
             return this.Csv(games, "games.csv");
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Post([FromBody]Game value)
+        [HttpPost("finish")]
+        public async Task<IActionResult> Finish([FromBody]Game value)
+        {
+            value.PlayerId = value.PlayerId ?? Request.Cookies["playerId"];
+            await repository.Update(value);
+
+            return Json(value);
+        }
+
+        [HttpPost("start")]
+        public async Task<JsonResult> Start([FromBody]Game value)
         {
             value.PlayerId = value.PlayerId ?? Request.Cookies["playerId"];
             var result = await repository.Insert(value);
 
-            return Json(result);
+            return Json(value);
         }
     }
 }

@@ -47,13 +47,39 @@
             });
 
             $.ajax({
-                url: "/api/games/",
+                url: "/api/games/finish",
                 type: "post",
                 data: data,
                 dataType: "json",
                 accept: 'application/json',
                 contentType: "application/json"
             });
+        }
+
+        function postGameStarted() {
+            var data = JSON.stringify({
+                duration: null,
+                finishedTime: null,
+                movesCount: null,
+                speciesName: speciesName
+            });
+
+            $.ajax({
+                url: "/api/games/start",
+                type: "post",
+                data: data,
+                dataType: "json",
+                accept: 'application/json',
+                contentType: "application/json",
+                success: function (data) {
+                    gameId = data.id;
+                },
+                error: function (result) {
+                    console.log("postGameEvent error: " + result.description);
+                }
+            });
+
+            postGameEvent("started", null);
         }
 
         function postGameEvent(label, card) {
@@ -83,11 +109,8 @@
                 accept: 'application/json',
                 contentType: "application/json",
 
-                success: function (data) {
-                    gameId = data;
-                },
                 error: function (result) {
-                    console.log(result);
+                    console.log("postGameEvent error: " + result.description);
                 }
             });
         }
@@ -212,7 +235,7 @@
         });
 
         gameStartedTime = new Date();
-        postGameEvent("started", null);
+        postGameStarted();
         for (var i = 0; i < cardCount; i++) {
             cards[i].cardId = "#card" + i;
             var card = cards[i];

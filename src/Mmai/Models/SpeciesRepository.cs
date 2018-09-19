@@ -14,11 +14,11 @@ namespace Mmai.Models
             this.environment = environment;
             speciesStubs = new Dictionary<string, SpeciesStub>(StringComparer.OrdinalIgnoreCase)
             {
-                { "littleowl", new SpeciesStub(@"\sounds\littleowl\", "Little Owl", 20, 5, CreateSpecies,
+                { "littleowl", new SpeciesStub(@"\sounds\littleowl\", "Little Owl", 2, 5, CreateSpecies,
                     "In the first game, you will hear the territorial calls of Little owl (Athene noctua).") },
-                { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 20, 5, CreateSpecies,
+                { "10vars", new SpeciesStub(@"\sounds\10vars\", "10vars", 2, 5, CreateSpecies,
                     "In subsequent games, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment.") },
-                { "3vars", new SpeciesStub(@"\sounds\3vars\", "3vars", 20, 5, CreateSpecies,
+                { "3vars", new SpeciesStub(@"\sounds\3vars\", "3vars", 2, 5, CreateSpecies,
                     "In subsequent games, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment. ")}
             };
         }

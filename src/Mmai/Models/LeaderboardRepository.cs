@@ -24,10 +24,11 @@ namespace Mmai.Models
             bool isDefaultSpecies = speciesName.Equals("littleowl", StringComparison.OrdinalIgnoreCase);
             var items = games
                 .Where(x => (x.SpeciesName != null && x.SpeciesName.Equals(speciesName)) || (isDefaultSpecies && x.SpeciesName == null))
+                .Where(x => x.MovesCount.HasValue)
                 .GroupBy(x => x.PlayerId)
                 .Select(x => new LeaderboardItem
                 {
-                    MovesCount = x.Min(y => y.MovesCount),
+                    MovesCount = x.Min(y => y.MovesCount.Value),
                     PlayerId = x.First().PlayerId
                 })
                 .OrderBy(x => x.MovesCount)

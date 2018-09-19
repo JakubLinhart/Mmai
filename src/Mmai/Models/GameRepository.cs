@@ -20,11 +20,24 @@ namespace Mmai.Models
         {
             await Table.CreateIfNotExistsAsync();
 
+            DateTime gameTime = game.FinishedTime ?? DateTime.UtcNow;
+            game.Id = game.Id ?? gameTime.Ticks.ToString() + Helpers.NewGuid();
+
             game.PartitionKey = game.PlayerId;
             game.RowKey = game.Id;
 
             await Table.ExecuteAsync(TableOperation.Insert(game));
             return game;
+        }
+
+        public async Task Update(Game game)
+        {
+            await Table.CreateIfNotExistsAsync();
+
+            game.PartitionKey = game.PlayerId;
+            game.RowKey = game.Id;
+
+            await Table.ExecuteAsync(TableOperation.InsertOrReplace(game));
         }
     }
 }

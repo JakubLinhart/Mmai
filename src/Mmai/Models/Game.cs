@@ -11,8 +11,8 @@ namespace Mmai.Models
         public string PlayerId { get; set; }
         public string SpeciesName { get; set; }
         public string Id { get; set; }
-        public DateTime FinishedTime { get; set; }
-        public int Duration { get; set; }
-        public int MovesCount { get; set; }
+        public DateTime? FinishedTime { get; set; }
+        public int? Duration { get; set; }
+        public int? MovesCount { get; set; }
     }
 }
