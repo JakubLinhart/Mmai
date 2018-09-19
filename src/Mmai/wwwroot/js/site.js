@@ -3,16 +3,19 @@
 }
 
 (function () {
-    $("#nickname").on("change", function () { changePlayer(); });
-    $("#email").on("change", function () { changePlayer(); });
+    var gameId = null;
 
-    function changePlayer() {
+    $("#nickname").on("change", function () { updateGameContact(); });
+    $("#email").on("change", function () { updateGameContact(); });
+
+    function updateGameContact() {
         var data = JSON.stringify({
+            id: gameId,
             nickName: $("#nickname").val(),
             email: $("#email").val()
         });
         $.ajax({
-            url: "/api/players/",
+            url: "/api/games/contact",
             type: "post",
             data: data,
             dataType: "json",
@@ -24,6 +27,8 @@
     function startGame(name) {
         $("#cards").empty();
         $("#leaderboard").addClass("hidden");
+        $("#nickname").empty();
+        $("#email").empty();
 
         $.getJSON("/api/species/" + name, function (data) {
             speciesName = data.name;
@@ -118,22 +123,15 @@
         }
 
         function fillLeaderBoard() {
-            $.getJSON("/api/players", function (player) {
-                var url = "/api/leaderboard/top10/" + speciesName;
-                $.getJSON(url, function (leaderboard) {
-                    $("#leaderboard-table").find("tr:gt(0)").remove();
-                    $.each(leaderboard.items, function (i, item) {
-                        $("#leaderboard-table")
-                            .append("<tr><td>" + item.nickName + "</td><td>" + item.movesCount + "</td></tr>");
-                    });
-                    $('#leaderboard-name').text(leaderboard.name);
-                    $('#leaderboard').removeClass('hidden');
+            var url = "/api/leaderboard/top10/" + speciesName;
+            $.getJSON(url, function (leaderboard) {
+                $("#leaderboard-table").find("tr:gt(0)").remove();
+                $.each(leaderboard.items, function (i, item) {
+                    $("#leaderboard-table")
+                        .append("<tr><td>" + item.nickName + "</td><td>" + item.movesCount + "</td></tr>");
                 });
-
-                if (player != null) {
-                    $("#nickname").val(player.nickName);
-                    $("#email").val(player.email);
-                }
+                $('#leaderboard-name').text(leaderboard.name);
+                $('#leaderboard').removeClass('hidden');
             });
         }
 
@@ -166,7 +164,6 @@
         var matchCount = 0;
         var lastEventTime = null;
         var gameStartedTime = null;
-        var gameId = null;
         var movesCount = 0;
 
         $('#game-description').text(species.description);

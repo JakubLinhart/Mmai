@@ -52,5 +52,14 @@ namespace Mmai.Controllers.Api
 
             return Json(value);
         }
+
+        [HttpPost("contact")]
+        public async Task<JsonResult> UpdateContact([FromBody]Game value)
+        {
+            var playerId = value.PlayerId ?? Request.Cookies["playerId"];
+            var result = await repository.UpdateContact(playerId, value.Id, value.NickName, value.Email);
+
+            return Json(result);
+        }
     }
 }

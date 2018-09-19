@@ -10,5 +10,6 @@ namespace Mmai.Models
         Task Update(Game game);
         Task<Game> Insert(Game game);
         Task<IEnumerable<Game>> GetAll();
+        Task<Game> UpdateContact(string playerId, string id, string nickName, string email);
     }
 }

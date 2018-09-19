@@ -39,5 +39,18 @@ namespace Mmai.Models
 
             await Table.ExecuteAsync(TableOperation.InsertOrReplace(game));
         }
+
+        public async Task<Game> UpdateContact(string playerId, string id, string nickName, string email)
+        {
+            var result = await Table.ExecuteAsync(TableOperation.Retrieve<Game>(playerId, id));
+            var game = (Game)result.Result;
+
+            game.NickName = nickName;
+            game.Email = email;
+
+            await Update(game);
+
+            return game;
+        }
     }
 }
