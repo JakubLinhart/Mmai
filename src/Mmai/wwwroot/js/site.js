@@ -26,8 +26,8 @@
         $("#leaderboard").addClass("hidden");
 
         $.getJSON("/api/species/" + name, function (data) {
-            game(data);
             speciesName = data.name;
+            game(data);
         });
     }
 
