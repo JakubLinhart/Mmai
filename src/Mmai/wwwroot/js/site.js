@@ -228,6 +228,8 @@
                     var url = e.data.url;
                     var card = e.data;
 
+                    var alreadyUncovered = $(cardId).hasClass("cardUncovered");
+
                     $(cardId)
                         .addClass("cardPlaying")
                         .removeClass("cardCovered")
@@ -236,6 +238,12 @@
                     audio.onended = function () {
                         $(card.cardId).removeClass("cardPlaying");
                         soundPlaying = false;
+
+                        if (alreadyUncovered) {
+                            console.log("Sound finished for already uncovered card: ");
+                            console.log(card);
+                            return;
+                        }
 
                         console.log("Sound finished for card: ");
                         console.log(card);
