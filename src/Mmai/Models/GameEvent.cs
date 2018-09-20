@@ -10,7 +10,7 @@ namespace Mmai.Models
     {
         public string GameId { get; set; }
 
-        public string SpeciesName { get; set; }
+        public string SpeciesId { get; set; }
         public string Label { get; set; }
         public string Card { get; set; }
         public DateTime Time { get; set; }

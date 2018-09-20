@@ -1,7 +1,9 @@
-﻿namespace Mmai.Models
+﻿using System.Threading.Tasks;
+
+namespace Mmai.Models
 {
     public interface ISpeciesRepository
     {
-        Species Get(string name);
+        Task<Species> Get(string name);
     }
 }

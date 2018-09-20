@@ -4,3 +4,42 @@
 <h2>Top 10</h2>
 <h3>@ViewData["Message"]</h3>
 
+<div id="leaderboard-littleowl" class="hidden">
+    <h4 id="leaderboard-littleowl-name"></h4>
+    <table id="leaderboard-littleowl-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
+
+<div id="leaderboard-3vars" class="hidden">
+    <h4 id="leaderboard-3vars-name"></h4>
+    <table id="leaderboard-3vars-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
+
+<div id="leaderboard-10vars" class="hidden">
+    <h4 id="leaderboard-10vars-name"></h4>
+    <table id="leaderboard-10vars-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        fillLeaderBoard("littleowl", "#leaderboard-littleowl")
+        fillLeaderBoard("3vars", "#leaderboard-3vars")
+        fillLeaderBoard("10vars", "#leaderboard-10vars")
+    });
+</script>
+
+

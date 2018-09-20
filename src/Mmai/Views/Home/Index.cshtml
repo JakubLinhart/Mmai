@@ -88,23 +88,12 @@
     <a href="#" id="next-game" class="hidden"></a>
 </div>
 
-<div id="leaderboard" class="hidden">
+<div>
     <div>
-        Leaderboard for <span id="leaderboard-name"></span>:
+        Nickname: <input type="text" name="nickname" id="nickname" />
     </div>
-    <table id="leaderboard-table" style="width:100%">
-        <tr>
-            <th>Nickname</th>
-            <th>Moves count</th>
-        </tr>
-    </table>
     <div>
-        <div>
-            Nickname: <input type="text" name="nickname" id="nickname" />
-        </div>
-        <div>
-            E-mail: <input type="text" name="email" id="email" />
-        </div>
+        E-mail: <input type="text" name="email" id="email" />
     </div>
 </div>
 
@@ -147,6 +136,6 @@
         </ul>
     </div>
     <script>
-        var speciesName = "@ViewData["speciesName"]";
+        startGame("@ViewData["speciesId"]");
     </script>
 </div>

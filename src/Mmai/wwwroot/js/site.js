@@ -2,43 +2,41 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-(function () {
+function fillLeaderBoard(speciesId, leaderBoardId) {
+    var url = "/api/leaderboard/top10/" + speciesId;
+    var leaderBoardTableId = leaderBoardId + "-table"
+    $.getJSON(url, function (leaderboard) {
+        $(leaderBoardTableId).find("tr:gt(0)").remove();
+        $.each(leaderboard.items, function (i, item) {
+            $(leaderBoardTableId)
+                .append("<tr><td>" + item.nickName + "</td><td>" + item.movesCount + "</td></tr>");
+        });
+        $(leaderBoardId + "-name").text(leaderboard.name);
+        $(leaderBoardId).removeClass('hidden');
+    });
+}
+
+var startGame = (function () {
     var gameId = null;
-
-    $("#nickname").on("change", function () { updateGameContact(); });
-    $("#email").on("change", function () { updateGameContact(); });
-
-    function updateGameContact() {
-        var data = JSON.stringify({
-            id: gameId,
-            nickName: $("#nickname").val(),
-            email: $("#email").val()
-        });
-        $.ajax({
-            url: "/api/games/contact",
-            type: "post",
-            data: data,
-            dataType: "json",
-            accept: 'application/json',
-            contentType: "application/json"
-        });
-    }
-
-    function startGame(name) {
-        $("#cards").empty();
-        $("#leaderboard").addClass("hidden");
-        $("#nickname").empty();
-        $("#email").empty();
-
-        $.getJSON("/api/species/" + name, function (data) {
-            speciesName = data.name;
-            game(data);
-        });
-    }
-
-    startGame(speciesName);
+    var currentSpeciesId = null;
 
     function game(species) {
+        function updateGameContact() {
+            var data = JSON.stringify({
+                id: gameId,
+                nickName: $("#nickname").val(),
+                email: $("#email").val()
+            });
+            $.ajax({
+                url: "/api/games/contact",
+                type: "post",
+                data: data,
+                dataType: "json",
+                accept: 'application/json',
+                contentType: "application/json"
+            });
+        }
+
         function postGameFinished() {
             var now = new Date();
             var gameDuration = now - gameStartedTime;
@@ -48,7 +46,7 @@
                 duration: gameDuration,
                 finishedTime: now,
                 movesCount: movesCount,
-                speciesName: speciesName
+                speciesId: currentSpeciesId
             });
 
             $.ajax({
@@ -66,7 +64,7 @@
                 duration: null,
                 finishedTime: null,
                 movesCount: null,
-                speciesName: speciesName
+                speciesId: currentSpeciesId
             });
 
             $.ajax({
@@ -103,7 +101,7 @@
                 time: now,
                 millisecondsSinceLastEvent: sinceLastEvent,
                 gameId: gameId,
-                speciesName: speciesName,
+                speciesId: currentSpeciesId,
                 row: Math.floor(cardIndex / columnCount),
                 column: cardIndex % columnCount
             });
@@ -119,19 +117,6 @@
                 error: function (result) {
                     console.log("postGameEvent error: " + result.description);
                 }
-            });
-        }
-
-        function fillLeaderBoard() {
-            var url = "/api/leaderboard/top10/" + speciesName;
-            $.getJSON(url, function (leaderboard) {
-                $("#leaderboard-table").find("tr:gt(0)").remove();
-                $.each(leaderboard.items, function (i, item) {
-                    $("#leaderboard-table")
-                        .append("<tr><td>" + item.nickName + "</td><td>" + item.movesCount + "</td></tr>");
-                });
-                $('#leaderboard-name').text(leaderboard.name);
-                $('#leaderboard').removeClass('hidden');
             });
         }
 
@@ -151,8 +136,6 @@
                 .on("click", function () {
                     startGame("nextrandom");
                 });
-
-            fillLeaderBoard();
         }
 
         var voiceSets = species.sets;
@@ -167,6 +150,12 @@
         var movesCount = 0;
 
         $('#game-description').text(species.description);
+        $("#nickname")
+            .off("change")
+            .on("change", function () { updateGameContact(); });
+        $("#email")
+            .off("change")
+            .on("change", function () { updateGameContact(); });
 
         $('#next-game')
             .off("click")
@@ -311,5 +300,18 @@
                     console.log(card)
                 });
         }
+    }
+
+    return function (id) {
+        $("#cards").empty();
+        $("#leaderboard").addClass("hidden");
+        $("#nickname").empty();
+        $("#email").empty();
+        currentSpeciesId = id;
+
+        $.getJSON("/api/species/" + id, function (data) {
+            currentSpeciesId = data.result.id;
+            game(data.result);
+        });
     }
 })();

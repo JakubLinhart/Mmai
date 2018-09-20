@@ -18,7 +18,7 @@ namespace Mmai.Controllers
             this.repository = repository;
         }
 
-        public IActionResult Index(string id)
+        public IActionResult Index(string id = "littleowl")
         {
             var playerId = Request.Cookies["playerId"];
 
@@ -29,7 +29,7 @@ namespace Mmai.Controllers
                 Response.Cookies.Append("playerId", Helpers.NewGuid(), options);
             }
 
-            ViewData["speciesName"] = id;
+            ViewData["speciesId"] = id;
 
             return View();
         }
