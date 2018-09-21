@@ -84,17 +84,36 @@
     </div>
 </div>
 
-<div>
-    <a href="#" id="next-game" class="hidden"></a>
-</div>
+<div id="finished-game" class="hidden">
+    <h2>Game finished</h2>
+    <p>
+        Well done!
+    </p>
 
-<div>
-    <div>
-        Nickname: <input type="text" name="nickname" id="nickname" />
-    </div>
-    <div>
-        E-mail: <input type="text" name="email" id="email" />
-    </div>
+    <p>
+        The lowest theoretical number of necessary turns in this game is <span id="stats-lowest-turns"></span>.
+    </p>
+    <p>
+        You have finished the game in <span id="stats-current-turns"></span> turns.
+    </p>
+    <p>
+        The best result for this game achieved by a real player is <span id="stats-best-turns"></span> turns.
+    </p>
+
+    <p>
+        Your result was better than the result achieved by <span id="stats-better-than-percentage"></span> percent of players.
+    </p>
+
+    <p>
+        Enter your nick name to make your result stand out: <br/>
+        <input type="text" name="nickname" id="nickname" />
+    </p>
+
+    <p>
+        Enter your email if you want to be notified about results of this pilot experiment and
+        possible follow-up game variants: <br />
+        <input type="text" name="email" id="email" />
+    </p>
 </div>
 
 <div class="row">

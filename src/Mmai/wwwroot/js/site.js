@@ -2,17 +2,24 @@
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function fillLeaderBoard(speciesId, leaderBoardId) {
-    var url = "/api/leaderboard/top10/" + speciesId;
-    var leaderBoardTableId = leaderBoardId + "-table"
+function fillLeaderBoard(speciesId, targetElementId) {
+    var url = "/api/statistics/top10/" + speciesId;
+    var leaderBoardTableElementId = targetElementId + "-table"
     $.getJSON(url, function (leaderboard) {
-        $(leaderBoardTableId).find("tr:gt(0)").remove();
+        $(leaderBoardTableElementId).find("tr:gt(0)").remove();
         $.each(leaderboard.items, function (i, item) {
-            $(leaderBoardTableId)
+            $(leaderBoardTableElementId)
                 .append("<tr><td>" + item.nickName + "</td><td>" + item.movesCount + "</td></tr>");
         });
-        $(leaderBoardId + "-name").text(leaderboard.name);
-        $(leaderBoardId).removeClass('hidden');
+        $(targetElementId + "-name").text(leaderboard.name);
+        $(targetElementId).removeClass('hidden');
+    });
+}
+
+function fillAllGameStatistics(targetElementId, speciesId) {
+    var url = "/api/statistics/allgames/" + speciesId;
+    $.getJSON(url, function (data) {
+        $(targetElementId).text(data.meanTurnsCount);
     });
 }
 
@@ -45,7 +52,7 @@ var startGame = (function () {
                 id: gameId,
                 duration: gameDuration,
                 finishedTime: now,
-                movesCount: movesCount,
+                movesCount: currentTurnsCount,
                 speciesId: currentSpeciesId
             });
 
@@ -136,6 +143,20 @@ var startGame = (function () {
                 .on("click", function () {
                     startGame("nextrandom");
                 });
+
+            loadGameStatistics();
+        }
+
+        function loadGameStatistics() {
+            $.getJSON("/api/statistics/game/" + currentTurnsCount + "/" + gameId + "/" + currentSpeciesId, function (data) {
+                $("#stats-lowest-turns").text(cardCount);
+                $("#stats-current-turns").text(currentTurnsCount);
+                $("#stats-best-turns").text(data.bestTurnsCount);
+                $("#stats-better-than-percentage").text(data.betterThanPercentage);
+
+                $("#finished-game")
+                    .removeClass("hidden");
+            });
         }
 
         var voiceSets = species.sets;
@@ -147,9 +168,10 @@ var startGame = (function () {
         var matchCount = 0;
         var lastEventTime = null;
         var gameStartedTime = null;
-        var movesCount = 0;
+        var currentTurnsCount = 0;
 
-        $('#game-description').text(species.description);
+        $("#finished-game").addClass("hidden");
+        $("#game-description").text(species.description);
         $("#nickname")
             .off("change")
             .on("change", function () { updateGameContact(); });
@@ -262,7 +284,7 @@ var startGame = (function () {
                         console.log(firstSelectedCard);
 
                         if (matchCount < cardCount) {
-                            movesCount++;
+                            currentTurnsCount++;
                             console.log("matchCount " + matchCount + "; cardCount " + cardCount);
                             if (firstSelectedCard != null && firstSelectedCard.cardId != card.cardId) {
                                 if (firstSelectedCard.setIndex != card.setIndex) {
