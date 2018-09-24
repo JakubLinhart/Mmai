@@ -159,6 +159,10 @@ var startGame = (function () {
             });
         }
 
+        function clearText(divId) {
+            $(divId).text("");
+        }
+
         var voiceSets = species.sets;
         var soundPlaying = false;
         var cardCount = species.cardCount;
@@ -261,12 +265,18 @@ var startGame = (function () {
                     var url = e.data.url;
                     var card = e.data;
 
-                    var alreadyUncovered = $(cardId).hasClass("cardUncovered");
+                    var alreadyUncovered = $(cardId).hasClass("cardUncovered") || $(cardId).hasClass("cardPeeking");
 
                     $(cardId)
                         .addClass("cardPlaying")
-                        .removeClass("cardCovered")
-                        .addClass("cardUncovered");
+                        .removeClass("cardCovered");
+
+                    if (!alreadyUncovered)
+                        $(cardId).addClass("cardPeeking");
+                    else
+                        $(cardId).addClass("cardUncovered");
+
+
                     var audio = new Audio(url);
                     audio.onended = function () {
                         $(card.cardId).removeClass("cardPlaying");
@@ -288,13 +298,31 @@ var startGame = (function () {
                             console.log("matchCount " + matchCount + "; cardCount " + cardCount);
                             if (firstSelectedCard != null && firstSelectedCard.cardId != card.cardId) {
                                 if (firstSelectedCard.setIndex != card.setIndex) {
-                                    $(card.cardId).removeClass("cardUncovered");
-                                    $(card.cardId).addClass("cardCovered");
-                                    $(firstSelectedCard.cardId).removeClass("cardUncovered");
-                                    $(firstSelectedCard.cardId).addClass("cardCovered");
+                                    $(card.cardId).removeClass("cardUncovered")
+                                        .removeClass("cardPeeking")
+                                        .addClass("cardCovered")
+                                        .text("mismatch!");
+
+                                    setTimeout(clearText, 1000, card.cardId);
+
+                                    $(firstSelectedCard.cardId)
+                                        .removeClass("cardPeeking")
+                                        .addClass("cardCovered")
+                                        .text("mismatch!")
+                                        .removeClass("cardUncovered");
+                                    setTimeout(clearText, 1000, firstSelectedCard.cardId);
+
                                     postGameEvent("mismatch", card.url, card.index);
                                 }
                                 else {
+                                    $(firstSelectedCard.cardId)
+                                        .removeClass("cardPeeking")
+                                        .text("match!")
+                                        .addClass("cardUncovered");
+                                    $(card.cardId)
+                                        .removeClass("cardPeeking")
+                                        .text("match!")
+                                        .addClass("cardUncovered");
                                     matchCount += 2;
                                     console.log(matchCount + ", " + cardCount)
                                     if (matchCount >= cardCount) {
@@ -302,6 +330,9 @@ var startGame = (function () {
                                         finishGame();
                                     }
                                     else {
+                                        setTimeout(clearText, 1000, card.cardId);
+                                        setTimeout(clearText, 1000, firstSelectedCard.cardId);
+
                                         postGameEvent("match", card.url, card.index);
                                     }
 
