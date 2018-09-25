@@ -31,7 +31,7 @@
 
 <ul>
     <li>
-        <a href="https://evolutionofidentitysignaling.com/">Evolution of identity signalling in vocalizations</a><br/>
+        <a href="https://evolutionofidentitysignaling.com/">Evolution of identity signalling in vocalizations</a><br />
         <div class="fb-like" data-href="https://www.facebook.com/evolutionofidentitysignaling/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
     </li>
     <li>
@@ -45,26 +45,84 @@
     </li>
 </ul>
 
-<p>
-    Mean number of turns in Little owls (Athene noctua): <span id="stats-littleowl"></span>
-</p>
+<div id="leaderboard-littleowl" class="hidden">
+    <h4 id="leaderboard-littleowl-name"></h4>
+    <p>
+        Mean number of turns in Little owls (Athene noctua): <span id="stats-littleowl"></span>
+    </p>
+    <table id="leaderboard-littleowl-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
 
-<p>
-    Mean number of turns in XXXX owl (our invented species): <span id="stats-10vars"></span>
-</p>
+<div id="leaderboard-10vars" class="hidden">
+    <h4 id="leaderboard-10vars-name"></h4>
+    <p>
+        Mean number of turns in Drunken UFO Owl: <span id="stats-10vars"></span>
+    </p>
+    <table id="leaderboard-10vars-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
 
-<p>
-    Mean numer of turns in XXXX owl (our invented species): <span id="stats-3vars"></span>
-</p>
+<div id="leaderboard-3vars" class="hidden">
+    <h4 id="leaderboard-3vars-name"></h4>
+    <p>
+        Mean numer of turns in Sleepy UFO Owl: <span id="stats-3vars"></span>
+    </p>
+    <table id="leaderboard-3vars-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
 
-<p>
-    If you want to know more about how individual identity is signalled in animal signals,
-    about little owls, or conservation of little owls in Czech republic you can visit related
-    websites and Facebook pages: <a href="https://evolutionofidentitysignaling.com/">https://evolutionofidentitysignaling.com/</a>
-</p>
+<div id="leaderboard-hs33-10vars" class="hidden">
+    <h4 id="leaderboard-hs33-10vars-name"></h4>
+    <p>
+        Mean numer of turns in Common UFO Owl: <span id="stats-hs33-10vars"></span>
+    </p>
+    <table id="leaderboard-hs33-10vars-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
+
+<div id="leaderboard-hs33-10vars-long" class="hidden">
+    <h4 id="leaderboard-hs33-10vars-long-name"></h4>
+    <p>
+        Mean numer of turns in Lazy UFO Owl: <span id="stats-hs33-10vars-long"></span>
+    </p>
+    <table id="leaderboard-hs33-10vars-long-table" style="width:100%">
+        <tr>
+            <th>Nickname</th>
+            <th>Moves count</th>
+        </tr>
+    </table>
+</div>
 
 <script>
     fillAllGameStatistics("#stats-littleowl", "littleowl");
+    fillLeaderBoard("littleowl", "#leaderboard-littleowl");
+
     fillAllGameStatistics("#stats-10vars", "10vars");
+    fillLeaderBoard("10vars", "#leaderboard-10vars")
+
     fillAllGameStatistics("#stats-3vars", "3vars");
+    fillLeaderBoard("3vars", "#leaderboard-3vars");
+
+    fillAllGameStatistics("#stats-hs33-10vars", "hs33-10vars");
+    fillLeaderBoard("hs33-10vars", "#leaderboard-hs33-10vars");
+
+    fillAllGameStatistics("#stats-hs33-10vars-long", "hs33-10vars-long");
+    fillLeaderBoard("hs33-10vars-long", "#leaderboard-hs33-10vars-long");
 </script>
