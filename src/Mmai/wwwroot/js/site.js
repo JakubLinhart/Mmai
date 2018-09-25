@@ -149,7 +149,6 @@ var startGame = (function () {
 
         function loadGameStatistics() {
             $.getJSON("/api/statistics/game/" + currentTurnsCount + "/" + gameId + "/" + currentSpeciesId, function (data) {
-                $("#stats-lowest-turns").text(cardCount);
                 $("#stats-current-turns").text(currentTurnsCount);
                 $("#stats-best-turns").text(data.bestTurnsCount);
                 $("#stats-better-than-percentage").text(data.betterThanPercentage);
