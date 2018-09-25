@@ -15,11 +15,15 @@ namespace Mmai.Models
             this.environment = environment;
             speciesStubs = new Dictionary<string, SpeciesStub>(StringComparer.OrdinalIgnoreCase)
             {
-                { "littleowl", new SpeciesStub("littleowl", @"\sounds\littleowl\", "Little Owl", 20, 5, CreateSpecies,
+                { "littleowl", new SpeciesStub("littleowl", @"\sounds\littleowl\", "Little Owl", 16, 4, CreateSpecies,
                     "In this game, you will hear the territorial calls of Little owl (Athene noctua).") },
-                { "10vars", new SpeciesStub("10vars", @"\sounds\10vars\", "10vars", 20, 5, CreateSpecies,
+                { "10vars", new SpeciesStub("10vars", @"\sounds\10vars\", "Drunken UFO Owl", 16, 4, CreateSpecies,
                     "Now, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment.") },
-                { "3vars", new SpeciesStub("3vars", @"\sounds\3vars\", "3vars", 20, 5, CreateSpecies,
+                { "3vars", new SpeciesStub("3vars", @"\sounds\3vars\", "Sleepy UFO Owl", 16, 4, CreateSpecies,
+                    "Now, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment. ")},
+                { "hs33-10vars", new SpeciesStub("hs33-10vars", @"\sounds\hs33_10vars\", "Common UFO Owl", 16, 4, CreateSpecies,
+                    "Now, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment. ")},
+                { "hs33-10vars-long", new SpeciesStub("hs33-10vars-long", @"\sounds\hs33_10vars_long\", "Lazy UFO Owl", 16, 4, CreateSpecies,
                     "Now, you will hear synthetic acoustic signatures from the two non-existing species which we made up for purposes of this pilot experiment. ")}
             };
         }
