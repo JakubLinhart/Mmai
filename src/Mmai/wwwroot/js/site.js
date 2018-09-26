@@ -144,6 +144,9 @@ var startGame = (function () {
                     startGame("nextrandom");
                 });
 
+            $('#species-name')
+                .text(currentSpeciesName);
+
             loadGameStatistics();
         }
 
@@ -363,6 +366,7 @@ var startGame = (function () {
 
         $.getJSON("/api/species/" + id, function (data) {
             currentSpeciesId = data.result.id;
+            currentSpeciesName = data.result.name;
             game(data.result);
         });
     }
