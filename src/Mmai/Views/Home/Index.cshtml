@@ -44,6 +44,11 @@
     .hidden {
         visibility: collapse;
     }
+
+    .player-form {
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
 </style>
 
 <div id="pre-game">
@@ -103,31 +108,25 @@
         Your result was better than the result achieved by <b id="stats-better-than-percentage"></b> percent of players.
     </p>
 
-    <div class="form-group">
-        <label for="nickname">Enter your nick name to identify your games:</label>
-        <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" width="64" style="max-width:32em" />
+    <div class="player-form">
+        <div class="form-group">
+            <label for="nickname">Enter your nick name to identify your games:</label>
+            <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" width="64" style="max-width:32em" />
+        </div>
+        <div class="form-group">
+            <label for="email">
+                Enter your email if you want to be notified about results of this pilot experiment and
+                possible follow-up game variants:
+            </label>
+            <input type="text" name="email" id="email" class="form-control" placeholder="Email" width="64" style="max-width:32em" />
+        </div>
     </div>
-    <div class="form-group">
-        <label for="email">
-            Enter your email if you want to be notified about results of this pilot experiment and
-            possible follow-up game variants:
-        </label>
-        <input type="text" name="email" id="email" class="form-control" placeholder="Email" width="64" style="max-width:32em" />
-    </div>
-</div>
-
-<div>
-    <h2>Choose your game</h2>
-    <ul>
-        <li><a href="/Home/Index/littleowl">Little Owl</a></li>
-        <li><a href="/Home/Index/3vars">Sleepy UFO Owl</a></li>
-        <li><a href="/Home/Index/10vars">Drunken UFO Owl</a></li>
-        <li><a href="/Home/Index/hs33-10vars">Common UFO Owl</a></li>
-        <li><a href="/Home/Index/hs33-10vars-long">Lazy UFO Owl</a></li>
-    </ul>
+    <p>
+        <a href="#" id="next-game">Try again!</a>
+    </p>
 </div>
 
 <script>
-        startGame("@ViewData["speciesId"]");
+    startGame("nextrandom");
 </script>
 

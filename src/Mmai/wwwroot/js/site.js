@@ -136,14 +136,6 @@ var startGame = (function () {
                 }
             }
 
-            $('#next-game')
-                .removeClass("hidden")
-                .text("next game")
-                .off("click")
-                .on("click", function () {
-                    startGame("nextrandom");
-                });
-
             $('#species-name')
                 .text(currentSpeciesName);
 
@@ -187,7 +179,9 @@ var startGame = (function () {
 
         $('#next-game')
             .off("click")
-            .addClass("hidden");
+            .on("click", function () {
+                startGame("nextrandom");
+            });
 
         var colIdx = 0;
         var rowIdx = 0;

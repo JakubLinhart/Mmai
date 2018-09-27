@@ -56,7 +56,7 @@ namespace Mmai.Models
         }
 
         private readonly Dictionary<string, SpeciesStub> speciesStubs;
-        private readonly string[] nextGameSpecies = { "10vars", "3vars" };
+        private readonly string[] nextGameSpecies = { "littleowl", "10vars", "3vars", "hs33-10vars", "hs33-10vars-long" };
 
         private Species CreateSpecies(SpeciesStub stub)
         {
