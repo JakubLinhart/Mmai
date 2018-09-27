@@ -4,16 +4,29 @@
 <h2>Game Results</h2>
 <h3>@ViewData["Message"]</h3>
 
-<div id="fb-root"></div>
-<script>
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/cs_CZ/sdk.js#xfbml=1&version=v3.1&appId=765753166815134&autoLogAppEvents=1';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
-</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<style>
+    .fa {
+        padding: 10px;
+        font-size: 15px;
+        width: 40px;
+        text-align: center;
+        text-decoration: none;
+    }
+
+    .fa-facebook {
+        background: #3B5998;
+        color: white;
+    }
+
+    .top10-section {
+        padding-top: 1em;
+    }
+
+    .top10-table {
+        padding-bottom: 1.5em;
+    }
+</style>
 
 <p>
     Thank you for playing!
@@ -31,84 +44,107 @@
 
 <ul>
     <li>
-        <a href="https://evolutionofidentitysignaling.com/">Evolution of identity signalling in vocalizations</a><br />
-        <div class="fb-like" data-href="https://www.facebook.com/evolutionofidentitysignaling/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+        <a href="https://en.wikipedia.org/wiki/Little_owl">Little owl</a>
     </li>
     <li>
-        <a href="https://www.birdlife.cz/co-delame/vyzkum-a-ochrana-ptaku/ochrana-druhu/sycek-obecny/">
+        <a href="https://evolutionofidentitysignaling.com/" target="_blank">
+            Evolution of identity signalling in vocalizations
+        </a><br />
+        <a href="https://www.facebook.com/evolutionofidentitysignaling/" class="fa fa-facebook" target="_blank"></a>
+        <a href="https://twitter.com/idsignaling" class="fa fa-twitter" target="_blank"></a>
+    </li>
+    <li>
+        <a href="https://www.birdlife.cz/co-delame/vyzkum-a-ochrana-ptaku/ochrana-druhu/sycek-obecny/" target="_blank">
             Conservation of Little owls in Czech Republic
         </a><br />
-        <div class="fb-like" data-href="https://www.facebook.com/OchranaSycka/" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-    </li>
-    <li>
-        <a href="https://en.wikipedia.org/wiki/Little_owl">Little owl</a>
+        <a href="https://www.facebook.com/birdlife.cz" class="fa fa-facebook" target="_blank"></a>
+        <a href="https://twitter.com/birdlifecz" class="fa fa-twitter" target="_blank"></a>
     </li>
 </ul>
 
-<div id="leaderboard-littleowl" class="hidden">
-    <h4 id="leaderboard-littleowl-name"></h4>
-    <p>
-        Mean number of turns in Little owls (Athene noctua): <span id="stats-littleowl"></span>
-    </p>
-    <table id="leaderboard-littleowl-table" style="width:100%">
-        <tr>
-            <th>Nickname</th>
-            <th>Turns</th>
-        </tr>
-    </table>
+<div class="top10-section">
+    <h4>Top 10</h4>
+
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 top10-table">
+            <div id="leaderboard-littleowl" class="hidden">
+                <b id="leaderboard-littleowl-name"></b>
+                <p>
+                    Mean number of turns in Little owls (Athene noctua): <span id="stats-littleowl"></span>
+                </p>
+                <table id="leaderboard-littleowl-table" class="table table-striped table-condensed">
+                    <tr>
+                        <th>Nickname</th>
+                        <th width="15%">Turns</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6 top10-table">
+            <div id="leaderboard-10vars" class="hidden">
+                <b id="leaderboard-10vars-name"></b>
+                <p>
+                    Mean number of turns in Drunken UFO Owl: <span id="stats-10vars"></span>
+                </p>
+                <table id="leaderboard-10vars-table" class="table table-striped table-condensed">
+                    <tr>
+                        <th>Nickname</th>
+                        <th width="15%">Turns</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 top10-table">
+            <div id="leaderboard-3vars" class="hidden">
+                <b id="leaderboard-3vars-name"></b>
+                <p>
+                    Mean numer of turns in Sleepy UFO Owl: <span id="stats-3vars"></span>
+                </p>
+                <table id="leaderboard-3vars-table" class="table table-striped table-condensed">
+                    <tr>
+                        <th>Nickname</th>
+                        <th width="15%">Turns</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-sm-6 top10-table">
+            <div id="leaderboard-hs33-10vars" class="hidden">
+                <b id="leaderboard-hs33-10vars-name"></b>
+                <p>
+                    Mean numer of turns in Common UFO Owl: <span id="stats-hs33-10vars"></span>
+                </p>
+                <table id="leaderboard-hs33-10vars-table" class="table table-striped table-condensed">
+                    <tr>
+                        <th>Nickname</th>
+                        <th width="15%">Turns</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6 col-sm-6 top10-table">
+            <div id="leaderboard-hs33-10vars-long" class="hidden">
+                <b id="leaderboard-hs33-10vars-long-name"></b>
+                <p>
+                    Mean numer of turns in Lazy UFO Owl: <span id="stats-hs33-10vars-long"></span>
+                </p>
+                <table id="leaderboard-hs33-10vars-long-table" class="table table-striped table-condensed">
+                    <tr>
+                        <th>Nickname</th>
+                        <th width="15%">Turns</th>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
 
-<div id="leaderboard-10vars" class="hidden">
-    <h4 id="leaderboard-10vars-name"></h4>
-    <p>
-        Mean number of turns in Drunken UFO Owl: <span id="stats-10vars"></span>
-    </p>
-    <table id="leaderboard-10vars-table" style="width:100%">
-        <tr>
-            <th>Nickname</th>
-            <th>Turns</th>
-        </tr>
-    </table>
-</div>
-
-<div id="leaderboard-3vars" class="hidden">
-    <h4 id="leaderboard-3vars-name"></h4>
-    <p>
-        Mean numer of turns in Sleepy UFO Owl: <span id="stats-3vars"></span>
-    </p>
-    <table id="leaderboard-3vars-table" style="width:100%">
-        <tr>
-            <th>Nickname</th>
-            <th>Turns</th>
-        </tr>
-    </table>
-</div>
-
-<div id="leaderboard-hs33-10vars" class="hidden">
-    <h4 id="leaderboard-hs33-10vars-name"></h4>
-    <p>
-        Mean numer of turns in Common UFO Owl: <span id="stats-hs33-10vars"></span>
-    </p>
-    <table id="leaderboard-hs33-10vars-table" style="width:100%">
-        <tr>
-            <th>Nickname</th>
-            <th>Turns</th>
-        </tr>
-    </table>
-</div>
-
-<div id="leaderboard-hs33-10vars-long" class="hidden">
-    <h4 id="leaderboard-hs33-10vars-long-name"></h4>
-    <p>
-        Mean numer of turns in Lazy UFO Owl: <span id="stats-hs33-10vars-long"></span>
-    </p>
-    <table id="leaderboard-hs33-10vars-long-table" style="width:100%">
-        <tr>
-            <th>Nickname</th>
-            <th>Turns</th>
-        </tr>
-    </table>
-</div>
 
 <script>
     fillAllGameStatistics("#stats-littleowl", "littleowl");

@@ -2,6 +2,10 @@
     ViewData["Title"] = "Home Page";
 }
 <style>
+    #cards {
+        margin-left: 1em;
+    }
+
     .card {
         margin: 10px 10px 10px 10px;
         padding: 10px 10px 10px 10px;
@@ -86,29 +90,30 @@
 <div id="finished-game" class="hidden">
     <h2>Game finished</h2>
     <p>
-        Well done! You matched all individuals of <span id="species-name"></span>.
+        Well done! You matched all individuals of <b id="species-name"></b>.
     </p>
 
     <p>
-        You have finished the game in <span id="stats-current-turns"></span> turns.
+        You have finished the game in <b id="stats-current-turns"></b> turns.
     </p>
     <p>
-        The best result for this game achieved by a real player is <span id="stats-best-turns"></span> turns.
+        The best result for this game achieved by a real player is <b id="stats-best-turns"></b> turns.
     </p>
     <p>
-        Your result was better than the result achieved by <span id="stats-better-than-percentage"></span> percent of players.
+        Your result was better than the result achieved by <b id="stats-better-than-percentage"></b> percent of players.
     </p>
 
-    <p>
-        Enter your nick name to identify your games: <br />
-        <input type="text" name="nickname" id="nickname" />
-    </p>
-
-    <p>
-        Enter your email if you want to be notified about results of this pilot experiment and
-        possible follow-up game variants: <br />
-        <input type="text" name="email" id="email" />
-    </p>
+    <div class="form-group">
+        <label for="nickname">Enter your nick name to identify your games:</label>
+        <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" width="64" style="max-width:32em" />
+    </div>
+    <div class="form-group">
+        <label for="email">
+            Enter your email if you want to be notified about results of this pilot experiment and
+            possible follow-up game variants:
+        </label>
+        <input type="text" name="email" id="email" class="form-control" placeholder="Email" width="64" style="max-width:32em" />
+    </div>
 </div>
 
 <div>
