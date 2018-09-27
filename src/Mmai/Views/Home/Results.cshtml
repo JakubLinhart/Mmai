@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "Game Results";
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Game Results"];
 }
-<h2>Game Results</h2>
+<h2>@Localizer["Game Results"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
@@ -29,33 +31,31 @@
 </style>
 
 <p>
-    Thank you for playing!
+    @Localizer["Thank you for playing!"]
 </p>
 
 <p>
-    Analysis of results will allow us to test what is the most efficient design of acoustic
-    individual signatures. Did you find it easier or harder to match individuals in different
-    species?
+    @Localizer["Analysis of results will allow us to test what is the most efficient design"]
 </p>
 
 <h4>
-    Find more information here:
+    @Localizer["Find more information here"]:
 </h4>
 
 <ul>
     <li>
-        <a href="https://en.wikipedia.org/wiki/Little_owl">Little owl</a>
+        <a href="https://en.wikipedia.org/wiki/Little_owl">@Localizer["Little Owl"]</a>
     </li>
     <li>
         <a href="https://evolutionofidentitysignaling.com/" target="_blank">
-            Evolution of identity signalling in vocalizations
+            @Localizer["Evolution of identity signalling in vocalizations"]
         </a><br />
         <a href="https://www.facebook.com/evolutionofidentitysignaling/" class="fa fa-facebook" target="_blank"></a>
         <a href="https://twitter.com/idsignaling" class="fa fa-twitter" target="_blank"></a>
     </li>
     <li>
         <a href="https://www.birdlife.cz/co-delame/vyzkum-a-ochrana-ptaku/ochrana-druhu/sycek-obecny/" target="_blank">
-            Conservation of Little owls in Czech Republic
+            @Localizer["Conservation of Little owls in Czech Republic"]
         </a><br />
         <a href="https://www.facebook.com/birdlife.cz" class="fa fa-facebook" target="_blank"></a>
         <a href="https://twitter.com/birdlifecz" class="fa fa-twitter" target="_blank"></a>
@@ -70,12 +70,12 @@
             <div id="leaderboard-littleowl" class="hidden">
                 <b id="leaderboard-littleowl-name"></b>
                 <p>
-                    Mean number of turns in Little owls (Athene noctua): <span id="stats-littleowl"></span>
+                    @Localizer["Mean number of turns in"] @Localizer["Little Owl"]: <span id="stats-littleowl"></span>
                 </p>
                 <table id="leaderboard-littleowl-table" class="table table-striped table-condensed">
                     <tr>
-                        <th>Nickname</th>
-                        <th width="15%">Turns</th>
+                        <th>@Localizer["Nickname"]</th>
+                        <th width="15%">@Localizer["_Turns"]</th>
                     </tr>
                 </table>
             </div>
@@ -85,12 +85,12 @@
             <div id="leaderboard-10vars" class="hidden">
                 <b id="leaderboard-10vars-name"></b>
                 <p>
-                    Mean number of turns in Drunken UFO Owl: <span id="stats-10vars"></span>
+                    @Localizer["Mean number of turns in"] @Localizer["Drunken UFO Owl"]: <span id="stats-10vars"></span>
                 </p>
                 <table id="leaderboard-10vars-table" class="table table-striped table-condensed">
                     <tr>
-                        <th>Nickname</th>
-                        <th width="15%">Turns</th>
+                        <th>@Localizer["Nickname"]</th>
+                        <th width="15%">@Localizer["_Turns"]</th>
                     </tr>
                 </table>
             </div>
@@ -101,12 +101,12 @@
             <div id="leaderboard-3vars" class="hidden">
                 <b id="leaderboard-3vars-name"></b>
                 <p>
-                    Mean numer of turns in Sleepy UFO Owl: <span id="stats-3vars"></span>
+                    @Localizer["Mean number of turns in"] @Localizer["Sleepy UFO Owl"]: <span id="stats-3vars"></span>
                 </p>
                 <table id="leaderboard-3vars-table" class="table table-striped table-condensed">
                     <tr>
-                        <th>Nickname</th>
-                        <th width="15%">Turns</th>
+                        <th>@Localizer["Nickname"]</th>
+                        <th width="15%">@Localizer["_Turns"]</th>
                     </tr>
                 </table>
             </div>
@@ -116,12 +116,12 @@
             <div id="leaderboard-hs33-10vars" class="hidden">
                 <b id="leaderboard-hs33-10vars-name"></b>
                 <p>
-                    Mean numer of turns in Common UFO Owl: <span id="stats-hs33-10vars"></span>
+                    @Localizer["Mean number of turns in"] @Localizer["Common UFO Owl"]: <span id="stats-hs33-10vars"></span>
                 </p>
                 <table id="leaderboard-hs33-10vars-table" class="table table-striped table-condensed">
                     <tr>
-                        <th>Nickname</th>
-                        <th width="15%">Turns</th>
+                        <th>@Localizer["Nickname"]</th>
+                        <th width="15%">@Localizer["_Turns"]</th>
                     </tr>
                 </table>
             </div>
@@ -132,12 +132,12 @@
             <div id="leaderboard-hs33-10vars-long" class="hidden">
                 <b id="leaderboard-hs33-10vars-long-name"></b>
                 <p>
-                    Mean numer of turns in Lazy UFO Owl: <span id="stats-hs33-10vars-long"></span>
+                    @Localizer["Mean number of turns in"] @Localizer["Lazy UFO Owl"]: <span id="stats-hs33-10vars-long"></span>
                 </p>
                 <table id="leaderboard-hs33-10vars-long-table" class="table table-striped table-condensed">
                     <tr>
-                        <th>Nickname</th>
-                        <th width="15%">Turns</th>
+                        <th>@Localizer["Nickname"]</th>
+                        <th width="15%">@Localizer["_Turns"]</th>
                     </tr>
                 </table>
             </div>

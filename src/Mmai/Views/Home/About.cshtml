@@ -1,7 +1,9 @@
-﻿@{
-    ViewData["Title"] = "About";
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = Localizer["About"];
 }
-<h2>@ViewData["Title"]</h2>
+<h2>@Localizer["About"]</h2>
 <h3>@ViewData["Message"]</h3>
 
 <style>
@@ -14,22 +16,17 @@
 </style>
 
 <p>
-    Match-match animal individuals memory game was created by Jakub Linhart and Pavel
-    Linhart within the project “Evolution of identity signalling in vocalizations”. The project
-    was supported by the National Science Centre, Poland, under Polonez fellowship reg.
-    no UMO-2015/19/P/NZ8/02507 funded by the European Union’s Horizon 2020
-    research and innovation programme under the Marie Skłodowska-Curie grant
-    agreement No 665778.
+    @Localizer["Match-match animal individuals memory game was created by"]
 </p>
 
 <p>
-    Little owls were recorded by Martin Šálek and Pavel Linhart.
+    @Localizer["Little owls were recorded by Martin Šálek and Pavel Linhart."]
 </p>
 
 <p>
-    The source code is published under <a href="https://github.com/JakubLinhart/Mmai/blob/master/LICENSE">MIT license</a> and you can download the source code from
+    @Localizer["The source code is published under"] <a href="https://github.com/JakubLinhart/Mmai/blob/master/LICENSE">MIT license</a>
+    @Localizer["and you can download the source code from"]
     <a href="https://github.com/JakubLinhart/Mmai">Github</a>.
-    You are welcome to study the source code and modify it.
 </p>
 
 <img src="~/images/EK-11-988x553_small.jpg" alt="EU logo" class="eulog-image" />

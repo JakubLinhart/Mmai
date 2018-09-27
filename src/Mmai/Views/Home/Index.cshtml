@@ -1,5 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@inject Microsoft.Extensions.Localization.IStringLocalizer<SharedResource> Localizer
+
+@{
+    ViewData["Title"] = Localizer["Game"];
 }
 <style>
     #cards {
@@ -53,20 +55,21 @@
 
 <div id="pre-game">
     <h2>
-        Game
+        @Localizer["Game"]
     </h2>
     <p>
-        Welcome to the acoustic memory game Match-Match Animal Individuals!
+        @Localizer["Welcome to the acoustic memory game Match-Match Animal Individuals!"]
     </p>
 
     <p>
-        After clicking on a card you will hear a call from an individual animal. Your task is to
-        match a pair of cards with the same acoustic signature and hence belonging to the
-        same individual. Match individuals of Little owls and one of our four fictional owl
-        species. The game variant was selected at random for you.
+        @Localizer["After clicking on a card you will hear a call from an individual animal."]
     </p>
 
-    <p id="game-description"></p>
+    <p>
+        @Localizer["In this game, you will hear the territorial calls of"]
+        
+        <span class="species-name"></span>.
+    </p>
 </div>
 
 <div id="cards">
@@ -93,36 +96,35 @@
 </div>
 
 <div id="finished-game" class="hidden">
-    <h2>Game finished</h2>
+    <h2>@Localizer["Game finished"]</h2>
     <p>
-        Well done! You matched all individuals of <b id="species-name"></b>.
+        @Localizer["Well done! You matched all individuals of"] <b class="species-name"></b>.
     </p>
 
     <p>
-        You have finished the game in <b id="stats-current-turns"></b> turns.
+        @Localizer["You have finished the game in"] <b id="stats-current-turns"></b> @Localizer["turns"].
     </p>
     <p>
-        The best result for this game achieved by a real player is <b id="stats-best-turns"></b> turns.
+        @Localizer["The best result for this game was"] <b id="stats-best-turns"></b> @Localizer["turns"].
     </p>
     <p>
-        Your result was better than the result achieved by <b id="stats-better-than-percentage"></b> percent of players.
+        @Localizer["Your result was better than the result achieved by"] <b id="stats-better-than-percentage"></b> @Localizer["percent of players"].
     </p>
 
     <div class="player-form">
         <div class="form-group">
-            <label for="nickname">Enter your nick name to identify your games:</label>
+            <label for="nickname">@Localizer["Enter your nick name to identify your games"]:</label>
             <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" width="64" style="max-width:32em" />
         </div>
         <div class="form-group">
             <label for="email">
-                Enter your email if you want to be notified about results of this pilot experiment and
-                possible follow-up game variants:
+                @Localizer["Enter your email"]:
             </label>
             <input type="text" name="email" id="email" class="form-control" placeholder="Email" width="64" style="max-width:32em" />
         </div>
     </div>
     <p>
-        <a href="#" id="next-game">Try again!</a>
+        <a href="#" id="next-game">@Localizer["Try again"]!</a>
     </p>
 </div>
 

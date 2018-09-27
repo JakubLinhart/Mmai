@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>Na temat</value>
+  </data>
+  <data name="After clicking on a card you will hear a call from an individual animal." xml:space="preserve">
+    <value>Po kliknięciu na kartę usłyszysz głos osobnika danego gatunku zwierzęcia. Twoim
+zadaniem jest połączyć pary kart z podobnymi głosami i tym samym należące do tego
+samego osobnika.</value>
+  </data>
+  <data name="Analysis of results will allow us to test what is the most efficient design" xml:space="preserve">
+    <value>Analiza wyników pozwoli nam przetestować najbardziej efektywny model akustycznych
+osobniczych wzorów. Czy uważasz że to łatwe czy trudne łączyć osobniki u różnych
+gatunków?</value>
+  </data>
+  <data name="and you can download the source code from" xml:space="preserve">
+    <value>i można go pobrać pod adresem</value>
+  </data>
+  <data name="Common UFO Owl" xml:space="preserve">
+    <value>Zwyczajna UFO sowa</value>
+  </data>
+  <data name="Conservation of Little owls in Czech Republic" xml:space="preserve">
+    <value>Ochrona pójdźki w Czechach</value>
+  </data>
+  <data name="Drunken UFO Owl" xml:space="preserve">
+    <value>Pijana UFO sowa</value>
+  </data>
+  <data name="Enter your email" xml:space="preserve">
+    <value>Wprowadź swój email, jeśli chcesz byśmy powiadomili Cię o wynikach tego
+pilotażowego eksperymentu i możliwych uzupełniających wariantach gry</value>
+  </data>
+  <data name="Enter your nick name to identify your games" xml:space="preserve">
+    <value>Wpisz swoje imię by zidentyfikować Twoje gry</value>
+  </data>
+  <data name="Evolution of identity signalling in vocalizations" xml:space="preserve">
+    <value>Ewolucja sygnalizacji tożsamości w
+wokalizacjach</value>
+  </data>
+  <data name="Find more information here" xml:space="preserve">
+    <value>Więcej informacji znajdziesz tutaj</value>
+  </data>
+  <data name="Game" xml:space="preserve">
+    <value>Zagraj</value>
+  </data>
+  <data name="Game finished" xml:space="preserve">
+    <value>Gra skończona</value>
+  </data>
+  <data name="Game Results" xml:space="preserve">
+    <value>Wyniki gry</value>
+  </data>
+  <data name="In this game, you will hear the territorial calls of" xml:space="preserve">
+    <value>W tej grze usłyszysz głosy terytorialne gatunku</value>
+  </data>
+  <data name="Lazy UFO Owl" xml:space="preserve">
+    <value>Leniwa UFO Sowa</value>
+  </data>
+  <data name="Little Owl" xml:space="preserve">
+    <value>Pójdźka</value>
+  </data>
+  <data name="Little owls were recorded by Martin Šálek and Pavel Linhart." xml:space="preserve">
+    <value>Pójdźki były nagrywane
+przez Martina Šálek i Pavla Linharta.</value>
+  </data>
+  <data name="Match-match animal individuals memory game was created by" xml:space="preserve">
+    <value>Gra pamięciowa „Połącz osobniki zwierząt” została stworzona przez Jakuba Linharta i
+Pavla Linharta w ramach projektu Polonez „ Ewolucja sygnalizacji tożsamości w
+wokalizacjach”. Projekt był wspierany przez Narodowe Centrum Nauki w Polsce, nr
+UMO-2015/19 / P / NZ8 / 02507 finansowany w ramach unijnego programu badań i
+innowacji "Horyzont 2020" zgodnie z umową grantu Marie Skłodowska-Curie nr
+665778n.</value>
+  </data>
+  <data name="Mean number of turns in" xml:space="preserve">
+    <value>Średnia liczba rund</value>
+  </data>
+  <data name="Nickname" xml:space="preserve">
+    <value>Gracz</value>
+  </data>
+  <data name="percent of players" xml:space="preserve">
+    <value>procent graczy</value>
+  </data>
+  <data name="Play" xml:space="preserve">
+    <value>Zagraj</value>
+  </data>
+  <data name="Sleepy UFO Owl" xml:space="preserve">
+    <value>Śpiąca UFO sowa</value>
+  </data>
+  <data name="Thank you for playing!" xml:space="preserve">
+    <value>Dziękuję za zagranie w naszą grę!</value>
+  </data>
+  <data name="The best result for this game was" xml:space="preserve">
+    <value>Najlepszy wynik dla tej gry to</value>
+  </data>
+  <data name="The source code is published under" xml:space="preserve">
+    <value>Kod źródłowy jest publikowany na</value>
+  </data>
+  <data name="Try again" xml:space="preserve">
+    <value>Spróbuj ponownie</value>
+  </data>
+  <data name="turns" xml:space="preserve">
+    <value>rundzie</value>
+  </data>
+  <data name="Welcome to the acoustic memory game Match-Match Animal Individuals!" xml:space="preserve">
+    <value>Witaj w akustycznej grze pamięciowej Dopasuj osobniki zwierząt!</value>
+  </data>
+  <data name="Well done! You matched all individuals of" xml:space="preserve">
+    <value>Dobrze zrobione! Połączyłeś wszystkie osobniki gatunku</value>
+  </data>
+  <data name="You have finished the game in" xml:space="preserve">
+    <value>Skończyłeś grę w</value>
+  </data>
+  <data name="Your result was better than the result achieved by" xml:space="preserve">
+    <value>Twój wynik był lepszy niż rezultaty uzyskane przez</value>
+  </data>
+  <data name="_Turns" xml:space="preserve">
+    <value>Rundy</value>
+  </data>
+</root>

@@ -136,9 +136,6 @@ var startGame = (function () {
                 }
             }
 
-            $('#species-name')
-                .text(currentSpeciesName);
-
             loadGameStatistics();
         }
 
@@ -168,8 +165,9 @@ var startGame = (function () {
         var gameStartedTime = null;
         var currentTurnsCount = 0;
 
+        $('.species-name')
+            .text(currentSpeciesName);
         $("#finished-game").addClass("hidden");
-        $("#game-description").text(species.description);
         $("#nickname")
             .off("change")
             .on("change", function () { updateGameContact(); });
