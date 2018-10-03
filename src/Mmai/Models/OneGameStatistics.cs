@@ -9,7 +9,7 @@ namespace Mmai.Models
     {
         public string SpeciesId { get; set; }
 
-        public int BestTurnsCount { get; set; }
-        public int BetterThanPercentage { get; set; }
+        public string BestTurnsCount { get; set; }
+        public string BetterThanPercentage { get; set; }
     }
 }

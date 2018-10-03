@@ -52,7 +52,8 @@ var startGame = (function () {
                 id: gameId,
                 duration: gameDuration,
                 finishedTime: now,
-                movesCount: currentTurnsCount,
+                movesCount: currentMovesCount,
+                turnsCount: currentTurnsCount,
                 speciesId: currentSpeciesId
             });
 
@@ -163,6 +164,7 @@ var startGame = (function () {
         var matchCount = 0;
         var lastEventTime = null;
         var gameStartedTime = null;
+        var currentMovesCount = 0;
         var currentTurnsCount = 0;
 
         $('.species-name')
@@ -288,7 +290,7 @@ var startGame = (function () {
                         console.log(firstSelectedCard);
 
                         if (matchCount < cardCount) {
-                            currentTurnsCount++;
+                            currentMovesCount++;
                             console.log("matchCount " + matchCount + "; cardCount " + cardCount);
                             if (firstSelectedCard != null && firstSelectedCard.cardId != card.cardId) {
                                 if (firstSelectedCard.setIndex != card.setIndex) {
@@ -304,6 +306,7 @@ var startGame = (function () {
                                         .addClass("cardCovered")
                                         .text("mismatch!")
                                         .removeClass("cardUncovered");
+                                    currentTurnsCount++;
                                     setTimeout(clearText, 1000, firstSelectedCard.cardId);
 
                                     postGameEvent("mismatch", card.url, card.index);
@@ -318,6 +321,7 @@ var startGame = (function () {
                                         .text("match!")
                                         .addClass("cardUncovered");
                                     matchCount += 2;
+                                    currentTurnsCount++;
                                     console.log(matchCount + ", " + cardCount)
                                     if (matchCount >= cardCount) {
                                         postGameEvent("finished", card.url, card.index);

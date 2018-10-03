@@ -14,6 +14,7 @@ namespace Mmai.Models
         public DateTime? FinishedTime { get; set; }
         public int? Duration { get; set; }
         public int? MovesCount { get; set; }
+        public int? TurnsCount { get; set; }
         public string Email { get; set; }
         public string NickName { get; set; }
     }
