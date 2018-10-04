@@ -85,7 +85,7 @@ namespace Mmai.Models
                 .Take(10)
                 .Select(x => new LeaderboardItem
                 {
-                    MovesCount = x.TurnsCount ?? x.MovesCount.Value,
+                    MovesCount = x.TurnsCount ?? x.MovesCount.Value / 2,
                     PlayerId = x.PlayerId,
                     NickName = x.NickName ?? "anonymous"
                 })
