@@ -136,7 +136,7 @@
     <value>Ochrana sýčka v Česku </value>
   </data>
   <data name="Drunken UFO Owl" xml:space="preserve">
-    <value>UFO sova opilá </value>
+    <value>UFO sova opilá</value>
   </data>
   <data name="Enter your email" xml:space="preserve">
     <value>Zadej svůj email, pokud chceš získat informace o výsledcích tohoto pokusu a možých budoucích variant hry</value>
@@ -218,5 +218,8 @@
   </data>
   <data name="_Turns" xml:space="preserve">
     <value>Tahy</value>
+  </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zavřít</value>
   </data>
 </root>

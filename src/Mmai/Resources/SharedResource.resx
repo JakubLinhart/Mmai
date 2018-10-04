@@ -229,4 +229,7 @@ agreement No 665778.</value>
   <data name="_Turns" xml:space="preserve">
     <value>Turns</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Close</value>
+  </data>
 </root>

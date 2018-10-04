@@ -146,8 +146,9 @@ var startGame = (function () {
                 $("#stats-best-turns").text(data.bestTurnsCount);
                 $("#stats-better-than-percentage").text(data.betterThanPercentage);
 
-                $("#finished-game")
+                $("#try-again")
                     .removeClass("hidden");
+                $("#finished-game").modal();
             });
         }
 
@@ -169,7 +170,7 @@ var startGame = (function () {
 
         $('.species-name')
             .text(currentSpeciesName);
-        $("#finished-game").addClass("hidden");
+        $("#try-again").addClass("hidden");
         $("#nickname")
             .off("change")
             .on("change", function () { updateGameContact(); });
@@ -177,7 +178,7 @@ var startGame = (function () {
             .off("change")
             .on("change", function () { updateGameContact(); });
 
-        $('#next-game')
+        $('.next-game')
             .off("click")
             .on("click", function () {
                 startGame("nextrandom");

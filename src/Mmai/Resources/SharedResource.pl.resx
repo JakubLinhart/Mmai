@@ -231,4 +231,7 @@ innowacji "Horyzont 2020" zgodnie z umową grantu Marie Skłodowska-Curie nr
   <data name="_Turns" xml:space="preserve">
     <value>Rundy</value>
   </data>
+  <data name="Close" xml:space="preserve">
+    <value>Zamknij</value>
+  </data>
 </root>

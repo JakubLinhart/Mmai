@@ -67,7 +67,7 @@
 
     <p>
         @Localizer["In this game, you will hear the territorial calls of"]
-        
+
         <span class="species-name"></span>.
     </p>
 </div>
@@ -95,37 +95,52 @@
     </div>
 </div>
 
-<div id="finished-game" class="hidden">
-    <h2>@Localizer["Game finished"]</h2>
-    <p>
-        @Localizer["Well done! You matched all individuals of"] <b class="species-name"></b>.
-    </p>
+<div id="finished-game" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>@Localizer["Game finished"]</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    @Localizer["Well done! You matched all individuals of"] <b class="species-name"></b>.
+                </p>
 
-    <p>
-        @Localizer["You have finished the game in"] <b id="stats-current-turns"></b> @Localizer["turns"].
-    </p>
-    <p>
-        @Localizer["The best result for this game was"] <b id="stats-best-turns"></b> @Localizer["turns"].
-    </p>
-    <p>
-        @Localizer["Your result was better than the result achieved by"] <b id="stats-better-than-percentage"></b> @Localizer["percent of players"].
-    </p>
+                <p>
+                    @Localizer["You have finished the game in"] <b id="stats-current-turns"></b> @Localizer["turns"].
+                </p>
+                <p>
+                    @Localizer["The best result for this game was"] <b id="stats-best-turns"></b> @Localizer["turns"].
+                </p>
+                <p>
+                    @Localizer["Your result was better than the result achieved by"] <b id="stats-better-than-percentage"></b> @Localizer["percent of players"].
+                </p>
 
-    <div class="player-form">
-        <div class="form-group">
-            <label for="nickname">@Localizer["Enter your nick name to identify your games"]:</label>
-            <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" width="64" style="max-width:32em" />
-        </div>
-        <div class="form-group">
-            <label for="email">
-                @Localizer["Enter your email"]:
-            </label>
-            <input type="text" name="email" id="email" class="form-control" placeholder="Email" width="64" style="max-width:32em" />
+                <div class="player-form">
+                    <div class="form-group">
+                        <label for="nickname">@Localizer["Enter your nick name to identify your games"]:</label>
+                        <input type="text" name="nickname" id="nickname" class="form-control" placeholder="Nickname" width="64" style="max-width:32em" />
+                    </div>
+                    <div class="form-group">
+                        <label for="email">
+                            @Localizer["Enter your email"]:
+                        </label>
+                        <input type="text" name="email" id="email" class="form-control" placeholder="Email" width="64" style="max-width:32em" />
+                    </div>
+                </div>
+                <p>
+                </p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="next-game btn btn-info btn-sm" data-dismiss="modal">@Localizer["Try again"]</a>
+                <a href="#" class="btn btn-info btn-sm" data-dismiss="modal">@Localizer["Close"]</a>
+            </div>
         </div>
     </div>
-    <p>
-        <a href="#" id="next-game">@Localizer["Try again"]!</a>
-    </p>
+</div>
+
+<div id="try-again" class="hidden">
+    <a href="#" class="next-game btn btn-info btn-sm">@Localizer["Try again"]</a>
 </div>
 
 <script>
