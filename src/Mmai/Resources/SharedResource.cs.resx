@@ -121,13 +121,13 @@
     <value>O hře</value>
   </data>
   <data name="After clicking on a card you will hear a call from an individual animal." xml:space="preserve">
-    <value>Po kliknutí na kartu uslyšíš hlas jedince daného druhu. Tvým úkolem je najít dvě karty, s podobným hlasem, které patří tomu samému jedinci. </value>
+    <value>Po kliknutí na kartu uslyšíš hlas jedince daného druhu. Tvým úkolem je najít dvě karty s podobným hlasem, které patří tomu samému jedinci. </value>
   </data>
   <data name="Analysis of results will allow us to test what is the most efficient design" xml:space="preserve">
     <value>Výsledky experimentu nám pomohou pochopit, jak má vypadat efektivní signál individuální identity. Přišlo Ti snadnější poznat jedince u některých druhů? </value>
   </data>
   <data name="and you can download the source code from" xml:space="preserve">
-    <value>je možné si ho stáhnout zde. </value>
+    <value>a je možné si ho stáhnout zde:</value>
   </data>
   <data name="Common UFO Owl" xml:space="preserve">
     <value>UFO sova obecná</value>
@@ -139,7 +139,7 @@
     <value>UFO sova opilá </value>
   </data>
   <data name="Enter your email" xml:space="preserve">
-    <value>Zadej svůj email, pokud chceš získat informace o výsledcích tohoto pokusu a možých budoucích variant hry. </value>
+    <value>Zadej svůj email, pokud chceš získat informace o výsledcích tohoto pokusu a možých budoucích variant hry</value>
   </data>
   <data name="Enter your nick name to identify your games" xml:space="preserve">
     <value>Zadej svoje jméno / přezdívku, aby bylo možné identifikovat tvé hry</value>
@@ -148,7 +148,7 @@
     <value>Projekt: Evoluce individuality v hlasech živočichů </value>
   </data>
   <data name="Find more information here" xml:space="preserve">
-    <value>Více informací najdeš zde: </value>
+    <value>Více informací najdeš zde</value>
   </data>
   <data name="Game" xml:space="preserve">
     <value>Hra</value>
@@ -172,9 +172,7 @@
     <value>Nahrávky sýčků pořídili Martin Šálek a Pavel Linhart. </value>
   </data>
   <data name="Match-match animal individuals memory game was created by" xml:space="preserve">
-    <value>Akustické pexeso "Match-Match Animal Individuals" vytvořil Jakub Linhart podle návrhu Pavla Linharta v rámci projektu Polonez „
-      Evolution of individual identity in vocalizations”. Projekt byl podpořen National Science Centre, Poland
-      (UMO-2015/19/P/NZ8/02507) v rámci evropského programu "Horyzont 2020" podprogramu Marie Skłodowska-Curie (č. 665778).</value>
+    <value>Akustické pexeso "Match-Match Animal Individuals" vytvořil Jakub Linhart podle návrhu Pavla Linharta v rámci projektu Polonez „ Evolution of individual identity in vocalizations”. Projekt byl podpořen National Science Centre, Poland (UMO-2015/19/P/NZ8/02507) v rámci evropského programu Horizon 2020" akce Marie Skłodowska-Curie (č. 665778).</value>
   </data>
   <data name="Mean number of turns in" xml:space="preserve">
     <value>Průměrný počet tahů</value>
@@ -192,7 +190,7 @@
     <value>UFO sova usínající</value>
   </data>
   <data name="Thank you for playing!" xml:space="preserve">
-    <value>Díky za dohrání hry!</value>
+    <value>Díky! Každá dohraná hra se počítá.</value>
   </data>
   <data name="The best result for this game was" xml:space="preserve">
     <value>Nejlepší výsledek v této hře byl </value>
@@ -204,10 +202,10 @@
     <value>Hraj znovu </value>
   </data>
   <data name="turns" xml:space="preserve">
-    <value>kolech</value>
+    <value>tazích</value>
   </data>
   <data name="Welcome to the acoustic memory game Match-Match Animal Individuals!" xml:space="preserve">
-    <value>Vítejte v akustickém pexesu "Match-Match Animal Individuals!"</value>
+    <value>Vítej v akustickém pexesu "Match-Match Animal Individuals!"</value>
   </data>
   <data name="Well done! You matched all individuals of" xml:space="preserve">
     <value>Výborně! Našel / Našla jsi všechny páry hlasů! </value>
