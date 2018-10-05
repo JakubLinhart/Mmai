@@ -11,16 +11,15 @@
     }
 
     .card {
-        margin: 2%;
-        padding: 2%;
-        padding-top: 20%;
+        margin: 0.5%;
+        padding-left: 2%;
+        padding-right: 2%;
+        padding-top: 7%;
+        padding-bottom: 11.1%;
         width: 20%;
-        height: 100%;
         float: left;
         color: white;
-        text-align: center;
-        vertical-align: central;
-        hyphens: manual;
+        border: 5px solid white;
     }
 
     .cardRow {
@@ -29,6 +28,20 @@
 
     .cardPeeking {
         background-color: rgb(128, 128, 255);
+    }
+
+    .cardMismatch {
+        background-image: url(/images/thumbs-down.svg);
+        background-size: 75%;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .cardMatch {
+        background-image: url(/images/thumbs-up.svg);
+        background-size: 75%;
+        background-repeat: no-repeat;
+        background-position: center;
     }
 
     .cardCovered {
@@ -80,25 +93,29 @@
 </div>
 
 <div id="cards">
-    <div class="row">
-        <div id="card0" class="card"></div>
-        <div id="card1" class="card"></div>
-        <div id="card2" class="card"></div>
+    <div class="cardRow">
+        <div id="card0" class="card cardCovered cardMismatch"></div>
+        <div id="card1" class="card cardCovered cardMatch"></div>
+        <div id="card2" class="card cardCovered"></div>
+        <div id="card3" class="card cardCovered"></div>
     </div>
-    <div class="row">
-        <div id="card3" class="card"></div>
-        <div id="card4" class="card"></div>
-        <div id="card5" class="card"></div>
+    <div class="cardRow">
+        <div id="card5" class="card cardCovered"></div>
+        <div id="card6" class="card cardCovered"></div>
+        <div id="card7" class="card cardCovered"></div>
+        <div id="card8" class="card cardCovered"></div>
     </div>
-    <div class="row">
-        <div id="card6" class="card"></div>
-        <div id="card7" class="card"></div>
-        <div id="card8" class="card"></div>
+    <div class="cardRow">
+        <div id="card9" class="card cardCovered"></div>
+        <div id="card10" class="card cardCovered"></div>
+        <div id="card11" class="card cardCovered"></div>
+        <div id="card12" class="card cardCovered"></div>
     </div>
-    <div class="row">
-        <div id="card9" class="card"></div>
-        <div id="card10" class="card"></div>
-        <div id="card11" class="card"></div>
+    <div class="cardRow">
+        <div id="card13" class="card cardCovered"></div>
+        <div id="card14" class="card cardCovered"></div>
+        <div id="card15" class="card cardCovered"></div>
+        <div id="card16" class="card cardCovered"></div>
     </div>
 </div>
 

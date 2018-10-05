@@ -152,8 +152,9 @@ var startGame = (function () {
             });
         }
 
-        function clearText(divId) {
-            $(divId).text("");
+        function delayedClearMatchClass(divId) {
+            $(divId).removeClass("cardMatch")
+                .removeClass("cardMismatch");
         }
 
         var voiceSets = species.sets;
@@ -298,28 +299,28 @@ var startGame = (function () {
                                     $(card.cardId).removeClass("cardUncovered")
                                         .removeClass("cardPeeking")
                                         .addClass("cardCovered")
-                                        .text("mismatch!");
+                                        .addClass("cardMismatch");
 
-                                    setTimeout(clearText, 1000, card.cardId);
+                                    setTimeout(delayedClearMatchClass, 1000, card.cardId);
 
                                     $(firstSelectedCard.cardId)
                                         .removeClass("cardPeeking")
                                         .addClass("cardCovered")
-                                        .text("mismatch!")
+                                        .addClass("cardMismatch")
                                         .removeClass("cardUncovered");
                                     currentTurnsCount++;
-                                    setTimeout(clearText, 1000, firstSelectedCard.cardId);
+                                    setTimeout(delayedClearMatchClass, 1000, firstSelectedCard.cardId);
 
                                     postGameEvent("mismatch", card.url, card.index);
                                 }
                                 else {
                                     $(firstSelectedCard.cardId)
                                         .removeClass("cardPeeking")
-                                        .text("match!")
+                                        .addClass("cardMatch")
                                         .addClass("cardUncovered");
                                     $(card.cardId)
                                         .removeClass("cardPeeking")
-                                        .text("match!")
+                                        .addClass("cardMatch")
                                         .addClass("cardUncovered");
                                     matchCount += 2;
                                     currentTurnsCount++;
@@ -329,8 +330,8 @@ var startGame = (function () {
                                         finishGame();
                                     }
                                     else {
-                                        setTimeout(clearText, 1000, card.cardId);
-                                        setTimeout(clearText, 1000, firstSelectedCard.cardId);
+                                        setTimeout(delayedClearMatchClass, 1000, card.cardId);
+                                        setTimeout(delayedClearMatchClass, 1000, firstSelectedCard.cardId);
 
                                         postGameEvent("match", card.url, card.index);
                                     }
