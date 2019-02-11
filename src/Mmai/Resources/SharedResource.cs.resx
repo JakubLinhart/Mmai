@@ -121,7 +121,7 @@
     <value>O hře</value>
   </data>
   <data name="After clicking on a card you will hear a call from an individual animal." xml:space="preserve">
-    <value>Po kliknutí na kartu uslyšíš hlas jedince daného druhu. Tvým úkolem je najít dvě karty s podobným hlasem, které patří tomu samému jedinci. </value>
+    <value>Po kliknutí na kartu uslyšíš hlas jedince daného druhu. Tvým úkolem je najít dvě karty s podobným hlasem, které patří tomu samému jedinci. Spáruj jedince u sýčka obecného a čtyř dalších vymyšlených druhů sov celkem 5 variantách hry.</value>
   </data>
   <data name="Analysis of results will allow us to test what is the most efficient design" xml:space="preserve">
     <value>Výsledky experimentu nám pomohou pochopit, jak má vypadat efektivní signál individuální identity. Přišlo Ti snadnější poznat jedince u některých druhů? </value>
@@ -160,7 +160,7 @@
     <value>Výsledky</value>
   </data>
   <data name="In this game, you will hear the territorial calls of" xml:space="preserve">
-    <value>V této hře uslyšíš territoriální hlasy tohoto druhu: </value>
+    <value>V této hře uslyšíš hlasy tohoto druhu:</value>
   </data>
   <data name="Lazy UFO Owl" xml:space="preserve">
     <value>UFO sova lenivá</value>
@@ -221,5 +221,8 @@
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zavřít</value>
+  </data>
+  <data name="Choose your game:" xml:space="preserve">
+    <value>Vyber hru:</value>
   </data>
 </root>

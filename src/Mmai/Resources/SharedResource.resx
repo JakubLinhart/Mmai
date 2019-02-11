@@ -121,10 +121,7 @@
     <value>About</value>
   </data>
   <data name="After clicking on a card you will hear a call from an individual animal." xml:space="preserve">
-    <value>After clicking on a card you will hear a call from an individual animal. Your task is to
-match a pair of cards with the same acoustic signature and hence belonging to the
-same individual. Match individuals of Little owls and one of our four fictional owl
-species. The game variant was selected at random for you.</value>
+    <value>After clicking on a card you will hear a call from an individual animal. Your task is to match a pair of cards with the same acoustic signature and hence belonging to the same individual. Match individuals of Little owls and one of our four fictional owl species.</value>
   </data>
   <data name="Analysis of results will allow us to test what is the most efficient design" xml:space="preserve">
     <value>Analysis of results will allow us to test what is the most efficient design of acoustic
@@ -165,7 +162,7 @@ species?</value>
     <value>Game Results</value>
   </data>
   <data name="In this game, you will hear the territorial calls of" xml:space="preserve">
-    <value>In this game, you will hear the territorial calls of</value>
+    <value>In this game, you will hear the calls of: </value>
   </data>
   <data name="Lazy UFO Owl" xml:space="preserve">
     <value>Lazy UFO Owl</value>
@@ -231,5 +228,8 @@ agreement No 665778.</value>
   </data>
   <data name="Close" xml:space="preserve">
     <value>Close</value>
+  </data>
+  <data name="Choose your game:" xml:space="preserve">
+    <value>Choose your game:</value>
   </data>
 </root>

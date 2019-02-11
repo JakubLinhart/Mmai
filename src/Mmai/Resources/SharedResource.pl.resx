@@ -121,9 +121,7 @@
     <value>Na temat</value>
   </data>
   <data name="After clicking on a card you will hear a call from an individual animal." xml:space="preserve">
-    <value>Po kliknięciu na kartę usłyszysz głos osobnika danego gatunku zwierzęcia. Twoim
-zadaniem jest połączyć pary kart z podobnymi głosami i tym samym należące do tego
-samego osobnika.</value>
+    <value>Po kliknięciu na kartę usłyszysz głos osobnika danego gatunku zwierzęcia. Twoim zadaniem jest połączyć pary kart z podobnymi głosami należące do tego samego osobnika. Połącz osobników pójdźky i cztyrech wymyślonych gatunkow sów w razem peciu wariantach gry.</value>
   </data>
   <data name="Analysis of results will allow us to test what is the most efficient design" xml:space="preserve">
     <value>Analiza wyników pozwoli nam przetestować najbardziej efektywny model akustycznych
@@ -166,7 +164,7 @@ wokalizacjach</value>
     <value>Wyniki gry</value>
   </data>
   <data name="In this game, you will hear the territorial calls of" xml:space="preserve">
-    <value>W tej grze usłyszysz głosy terytorialne gatunku</value>
+    <value>W tej grze usłyszysz głosy gatunku:</value>
   </data>
   <data name="Lazy UFO Owl" xml:space="preserve">
     <value>Leniwa UFO Sowa</value>
@@ -233,5 +231,8 @@ innowacji "Horyzont 2020" zgodnie z umową grantu Marie Skłodowska-Curie nr
   </data>
   <data name="Close" xml:space="preserve">
     <value>Zamknij</value>
+  </data>
+  <data name="Choose your game:" xml:space="preserve">
+    <value>Wybierz grę:</value>
   </data>
 </root>

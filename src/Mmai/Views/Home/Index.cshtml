@@ -22,6 +22,10 @@
         border: 5px solid white;
     }
 
+    .species-name {
+        font-weight: bold;
+    
+    }
     .cardRow {
         clear: both;
     }
@@ -83,6 +87,15 @@
 
     <p>
         @Localizer["After clicking on a card you will hear a call from an individual animal."]
+    </p>
+
+    <p>
+        @Localizer["Choose your game:"]
+        <a href="/Home/Index/littleowl">@Localizer["Little Owl"]</a>,
+        <a href="/Home/Index/3vars">@Localizer["Sleepy UFO Owl"]</a>,
+        <a href="/Home/Index/10vars">@Localizer["Drunken UFO Owl"]</a>,
+        <a href="/Home/Index/hs33-10vars">@Localizer["Common UFO Owl"]</a>,
+        <a href="/Home/Index/hs33-10vars-long">@Localizer["Lazy UFO Owl"]</a>.
     </p>
 
     <p>
@@ -162,5 +175,5 @@
 </div>
 
 <script>
-    startGame("nextrandom");
+    startGame('@ViewData["speciesId"]');
 </script>

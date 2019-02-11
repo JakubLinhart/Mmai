@@ -64,7 +64,7 @@ namespace Mmai
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id=littleowl}");
+                    template: "{controller=Home}/{action=Index}/{id=nextrandom}");
             });
         }
     }

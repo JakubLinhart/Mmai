@@ -18,7 +18,7 @@ namespace Mmai.Controllers
             this.repository = repository;
         }
 
-        public IActionResult Index(string id = "littleowl")
+        public IActionResult Index(string id="nextrandom")
         {
             var playerId = Request.Cookies["playerId"];
 
