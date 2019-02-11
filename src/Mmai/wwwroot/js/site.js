@@ -175,9 +175,6 @@ var startGame = (function () {
         $("#nickname")
             .off("change")
             .on("change", function () { updateGameContact(); });
-        $("#email")
-            .off("change")
-            .on("change", function () { updateGameContact(); });
 
         $('.next-game')
             .off("click")
