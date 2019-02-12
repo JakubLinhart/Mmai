@@ -225,4 +225,13 @@
   <data name="Choose your game:" xml:space="preserve">
     <value>Vyber hru:</value>
   </data>
+  <data name="By playing this game you give consent" xml:space="preserve">
+    <value>Hraním této hry souhlasíte s využitím výsledků pro vědecké účely. Výsledky jsou plně anonymní a žádné osobní údaje neukládáme ani nepředáváme třetím stranám.</value>
+  </data>
+  <data name="I understand and want to play the game" xml:space="preserve">
+    <value>Rozumím a chci hrát!</value>
+  </data>
+  <data name="You can find more information" xml:space="preserve">
+    <value>Další informace (jen anglicky) o hře i sbíraných datech najdete na webových stránkách projektu "Evolution of identity signaling in vocalisations".</value>
+  </data>
 </root>

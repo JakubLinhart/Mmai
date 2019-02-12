@@ -21,13 +21,20 @@ namespace Mmai.Controllers
         public IActionResult Index(string id="nextrandom")
         {
             var playerId = Request.Cookies["playerId"];
-
             if (string.IsNullOrEmpty(playerId))
             {
                 var options = new CookieOptions();
                 options.Expires = DateTime.Now.AddDays(14);
                 Response.Cookies.Append("playerId", Helpers.NewGuid(), options);
             }
+
+            var consentText = Request.Cookies["consent"];
+            if (string.IsNullOrEmpty(consentText))
+            {
+                ViewData["consentRequired"] = "1";
+            }
+            else
+                ViewData["consentRequired"] = null;
 
             ViewData["speciesId"] = id;
 

@@ -232,4 +232,13 @@ agreement No 665778.</value>
   <data name="Choose your game:" xml:space="preserve">
     <value>Choose your game:</value>
   </data>
+  <data name="By playing this game you give consent" xml:space="preserve">
+    <value>By playing this game you give consent with using results of the game for scientific purposes. All data are anonymized and we do not store personal data or provide them to any third parties.</value>
+  </data>
+  <data name="I understand and want to play the game" xml:space="preserve">
+    <value>I understand and want to play the game!</value>
+  </data>
+  <data name="You can find more information" xml:space="preserve">
+    <value>You can find more information (only English) about the game and data collected on the website of the project “Evolution of identity signaling in vocalisations“.</value>
+  </data>
 </root>
