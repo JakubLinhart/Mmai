@@ -23,14 +23,6 @@ function fillAllGameStatistics(targetElementId, speciesId) {
     });
 }
 
-function askForConsent() {
-    $("#give-consent").on("click", function () {
-        document.cookie = "consent=1; expires=Fri, 31 Dec 9999 23:59:59 GMT";
-    });
-
-    $("#consent").modal();
-}
-
 var startGame = (function () {
     var gameId = null;
     var currentSpeciesId = null;

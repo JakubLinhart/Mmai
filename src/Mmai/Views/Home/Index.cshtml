@@ -84,9 +84,15 @@
     <p>
         @Localizer["Welcome to the acoustic memory game Match-Match Animal Individuals!"]
     </p>
-
     <p>
         @Localizer["After clicking on a card you will hear a call from an individual animal."]
+    </p>
+    <p>
+        @Localizer["By playing this game you give consent"]
+    </p>
+    <p>
+        @Localizer["You can find more information"]
+        "<a href="https://evolutionofidentitysignaling.com/" target="_blank">Evolution of identity signaling in vocalisations</a>".
     </p>
 
     <p>
@@ -174,27 +180,6 @@
     <a href="#" class="next-game btn btn-info btn-sm">@Localizer["Try again"]</a>
 </div>
 
-<div id="consent" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-body">
-                <p>
-                    @Localizer["By playing this game you give consent"]
-                </p>
-
-                <p>
-                    @Localizer["You can find more information"]
-                </p>
-                <p>
-                    <a id="give-consent" href="#" data-dismiss="modal">@Localizer["I understand and want to play the game"]</a>
-</p>
-            </div>
-        </div>
-    </div>
-</div>
-
 <script>
     startGame('@ViewData["speciesId"]');
-    if ('@ViewData["consentRequired"]' == '1')
-        askForConsent();
 </script>

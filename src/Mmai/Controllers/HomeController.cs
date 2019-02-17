@@ -28,14 +28,6 @@ namespace Mmai.Controllers
                 Response.Cookies.Append("playerId", Helpers.NewGuid(), options);
             }
 
-            var consentText = Request.Cookies["consent"];
-            if (string.IsNullOrEmpty(consentText))
-            {
-                ViewData["consentRequired"] = "1";
-            }
-            else
-                ViewData["consentRequired"] = null;
-
             ViewData["speciesId"] = id;
 
             return View();
