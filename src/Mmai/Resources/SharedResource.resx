@@ -144,7 +144,7 @@ species?</value>
     <value>Enter your nick name to identify your games</value>
   </data>
   <data name="Enter your email if you want to be notified about results of this pilot experiment and&#xD;&#xA;possible follow-up game variants" xml:space="preserve">
-    <value>Enter your nick name to identify your games</value>
+    <value>Enter your nick name for score board</value>
   </data>
   <data name="Evolution of identity signalling in vocalizations" xml:space="preserve">
     <value>Evolution of identity signalling in vocalizations</value>
@@ -171,7 +171,7 @@ species?</value>
     <value>Little Owl</value>
   </data>
   <data name="Little owls were recorded by Martin Šálek and Pavel Linhart." xml:space="preserve">
-    <value>Little owls were recorded by Martin Šálek and Pavel Linhart.</value>
+    <value>Little owls were recorded by Martin Šálek and Pavel Linhart within the ATHENE project.</value>
   </data>
   <data name="Match-match animal individuals memory game was created by" xml:space="preserve">
     <value>Match-match animal individuals memory game was created by Jakub Linhart and Pavel

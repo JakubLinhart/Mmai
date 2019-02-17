@@ -145,7 +145,7 @@ gatunków?</value>
 pilotażowego eksperymentu i możliwych uzupełniających wariantach gry</value>
   </data>
   <data name="Enter your nick name to identify your games" xml:space="preserve">
-    <value>Wpisz swoje imię by zidentyfikować Twoje gry</value>
+    <value>Wpisz swój pseudonim do tablice wyników:</value>
   </data>
   <data name="Evolution of identity signalling in vocalizations" xml:space="preserve">
     <value>Ewolucja sygnalizacji tożsamości w
@@ -173,8 +173,7 @@ wokalizacjach</value>
     <value>Pójdźka</value>
   </data>
   <data name="Little owls were recorded by Martin Šálek and Pavel Linhart." xml:space="preserve">
-    <value>Pójdźki były nagrywane
-przez Martina Šálek i Pavla Linharta.</value>
+    <value>Pójdźki były nagrywane przez Martina Šálek i Pavla Linharta w ramach projektu ATHENE.</value>
   </data>
   <data name="Match-match animal individuals memory game was created by" xml:space="preserve">
     <value>Gra pamięciowa „Połącz osobniki zwierząt” została stworzona przez Jakuba Linharta i
@@ -212,7 +211,7 @@ innowacji "Horyzont 2020" zgodnie z umową grantu Marie Skłodowska-Curie nr
     <value>Spróbuj ponownie</value>
   </data>
   <data name="turns" xml:space="preserve">
-    <value>rundzie</value>
+    <value>rund</value>
   </data>
   <data name="Welcome to the acoustic memory game Match-Match Animal Individuals!" xml:space="preserve">
     <value>Witaj w akustycznej grze pamięciowej Dopasuj osobniki zwierząt!</value>

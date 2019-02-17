@@ -121,7 +121,7 @@
     <value>O hře</value>
   </data>
   <data name="After clicking on a card you will hear a call from an individual animal." xml:space="preserve">
-    <value>Po kliknutí na kartu uslyšíš hlas jedince daného druhu. Tvým úkolem je najít dvě karty s podobným hlasem, které patří tomu samému jedinci. Spáruj jedince u sýčka obecného a čtyř dalších vymyšlených druhů sov celkem 5 variantách hry.</value>
+    <value>Po kliknutí na kartu uslyšíš hlas jedince daného druhu. Tvým úkolem je najít dvě karty s podobným hlasem, které patří tomu samému jedinci. Spáruj jedince u sýčka obecného a čtyř dalších vymyšlených druhů sov v celkem 5 variantách hry.</value>
   </data>
   <data name="Analysis of results will allow us to test what is the most efficient design" xml:space="preserve">
     <value>Výsledky experimentu nám pomohou pochopit, jak má vypadat efektivní signál individuální identity. Přišlo Ti snadnější poznat jedince u některých druhů? </value>
@@ -142,7 +142,7 @@
     <value>Zadej svůj email, pokud chceš získat informace o výsledcích tohoto pokusu a možých budoucích variant hry</value>
   </data>
   <data name="Enter your nick name to identify your games" xml:space="preserve">
-    <value>Zadej svoje jméno / přezdívku, aby bylo možné identifikovat tvé hry</value>
+    <value>Zadej svou přezdívku do výsledkové listiny:</value>
   </data>
   <data name="Evolution of identity signalling in vocalizations" xml:space="preserve">
     <value>Projekt: Evoluce individuality v hlasech živočichů </value>
@@ -169,7 +169,7 @@
     <value>Sýček obecný</value>
   </data>
   <data name="Little owls were recorded by Martin Šálek and Pavel Linhart." xml:space="preserve">
-    <value>Nahrávky sýčků pořídili Martin Šálek a Pavel Linhart. </value>
+    <value>Nahrávky sýčků pořídili Martin Šálek a Pavel Linhart v rámci projektu ATHENE.</value>
   </data>
   <data name="Match-match animal individuals memory game was created by" xml:space="preserve">
     <value>Akustické pexeso "Match-Match Animal Individuals" vytvořil Jakub Linhart podle návrhu Pavla Linharta v rámci projektu Polonez „ Evolution of individual identity in vocalizations”. Projekt byl podpořen National Science Centre, Poland (UMO-2015/19/P/NZ8/02507) v rámci evropského programu Horizon 2020 akce Marie Skłodowska-Curie (č. 665778).</value>
@@ -202,13 +202,13 @@
     <value>Hraj znovu </value>
   </data>
   <data name="turns" xml:space="preserve">
-    <value>tazích</value>
+    <value>tahů</value>
   </data>
   <data name="Welcome to the acoustic memory game Match-Match Animal Individuals!" xml:space="preserve">
     <value>Vítej v akustickém pexesu "Match-Match Animal Individuals!"</value>
   </data>
   <data name="Well done! You matched all individuals of" xml:space="preserve">
-    <value>Výborně! Našel / Našla jsi všechny páry hlasů! </value>
+    <value>Výborně! Našel jsi všechny páry hlasů.</value>
   </data>
   <data name="You have finished the game in" xml:space="preserve">
     <value>Dokončil jsi hru v</value>
