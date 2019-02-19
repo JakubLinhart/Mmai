@@ -231,4 +231,7 @@
   <data name="You can find more information" xml:space="preserve">
     <value>Další informace (jen anglicky) o hře i sbíraných datech najdeš na webových stránkách projektu </value>
   </data>
+  <data name="Texts were prepared and translated" xml:space="preserve">
+    <value>Texty připravili a přeložili Pavel Linhart a Katarzyna Łosak.</value>
+  </data>
 </root>

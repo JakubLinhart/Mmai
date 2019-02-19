@@ -240,4 +240,7 @@ innowacji "Horyzont 2020" zgodnie z umową grantu Marie Skłodowska-Curie nr
   <data name="You can find more information" xml:space="preserve">
     <value>Więcej informacji (tylko po angielsku) o grze i danych zbieranych znalaznesz na stronie internetowej projektu </value>
   </data>
+  <data name="Texts were prepared and translated" xml:space="preserve">
+    <value>Text został przygotowany i przetłumaczony przez Pavla Linharta i Katarzynę Łosak.</value>
+  </data>
 </root>

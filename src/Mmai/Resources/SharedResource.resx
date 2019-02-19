@@ -238,4 +238,7 @@ agreement No 665778.</value>
   <data name="You can find more information" xml:space="preserve">
     <value>You can find more information (only English) about the game and data collected on the website of the project </value>
   </data>
+  <data name="Texts were prepared and translated" xml:space="preserve">
+    <value>Texts were prepared and translated by Pavel Linhart and Katarzyna Łosak.</value>
+  </data>
 </root>
